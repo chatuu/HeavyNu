@@ -1,0 +1,352 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  PhD Thesis: mycommands.sty style file
+%  -------------------------------------
+%
+%  First written: 31-Jan-1997 Bruce D. Yabsley
+%  Last modified: 14-Feb-1999 systematic removal of trailing math space
+%		   6-Jul-1999 Added extras from S Boyd's mycommands.sty
+%
+%  Purpose: Define my frequently-used expressions as commands.
+%
+%  See also: Kevin's /oz/home/lib/tex/macros/bibhep.sty
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% neutrino types
+
+\newcommand{\nm}{\ensuremath{\nu_{\mu}}}
+\newcommand{\nel}{\ensuremath{\nu_{e}}}
+\newcommand{\nt}{\ensuremath{\nu_{\tau}}}
+\newcommand{\nmb}{\ensuremath{\overline{\nu}_{\mu}}}
+\newcommand{\neb}{\ensuremath{\overline{\nu}_{e}}}
+\newcommand{\ntb}{\ensuremath{\overline{\nu_{\tau}}}}
+
+%
+%  types of oscillation
+%
+
+\newcommand{\mutotau}{\ensuremath{\nu_\mu \leadsto \nu_\tau}}
+\newcommand{\etotau}{\ensuremath{\nu_e \leadsto \nu_\tau}}
+\newcommand{\muetotau}{\ensuremath{\nu_\mu (\nu_e) \leadsto \nu_\tau}}
+\newcommand{\mutoe}{\ensuremath{\nu_\mu \leadsto \nu_e}}
+\newcommand{\mubtoeb}{\ensuremath{\nmb \leadsto \neb}}
+
+
+%
+%  neutrino interactions
+%
+
+\newcommand{\nuecc}{\ensuremath{\nu_e + N \rightarrow e^- + X}}
+\newcommand{\nuebarcc}{\ensuremath{{\overline{\nu}}_e + N \rightarrow e^+ + X}}
+\newcommand{\numucc}{\ensuremath{\nu_\mu + N \rightarrow \mu^- + X}}
+\newcommand{\numubarcc}{\ensuremath{{\overline{\nu}}_\mu + N \rightarrow \mu^+ + X}}
+\newcommand{\numunc}{\ensuremath{\nu_\mu + N \rightarrow \nu_\mu + X}}
+\newcommand{\nutaucc}{\ensuremath{\nu_\tau + N \rightarrow \tau^- + X}}
+
+
+%
+%  numbers of interactions
+%
+
+% following numbers taken from table 1 of the NIM paper draft; 
+% for 2.4 * 10^19 pot
+\newcommand{\NUMcanonical}{\ensuremath{2.4 \times 10^{19} \;$ {\rm p.o.t.}}}
+\newcommand{\NUMnumucc}{\ensuremath{1.26 \times 10^6}}
+\newcommand{\NUMnumubarcc}{\ensuremath{3.25 \times 10^4}}
+\newcommand{\NUMnuecc}{\ensuremath{1.72 \times 10^4}}
+\newcommand{\NUMnuebarcc}{\ensuremath{0.178 \times 10^4}}
+
+%this is a rough guess
+\newcommand{\NUMnumunc}{\ensuremath{4 \times 10^5}}
+
+%
+%  tau decays
+%
+
+\newcommand{\taue}{\ensuremath{\tau \rightarrow e}}
+\newcommand{\taunue}{\ensuremath{\tau \rightarrow \nu \overline{\nu} e}}
+\newcommand{\Taue}{\ensuremath{\tau^- \rightarrow \nu_\tau {\overline{\nu}}_e e^-}}
+\newcommand{\taumu}{\ensuremath{\tau \rightarrow \mu}}
+\newcommand{\taunumu}{\ensuremath{\tau \rightarrow \nu \overline{\nu} \mu}}
+\newcommand{\Taumu}{\ensuremath{\tau^- \rightarrow \nu_\tau {\overline{\nu}}_\mu \mu^-}}
+\newcommand{\Tauhad}{\ensuremath{\tau^- \rightarrow \nu_\tau + \mbox{hadrons}}}
+\newcommand{\taupi}{\ensuremath{\tau \rightarrow \pi}}
+\newcommand{\taunupi}{\ensuremath{\tau \rightarrow \nu \pi}}
+\newcommand{\Taupi}{\ensuremath{\tau^- \rightarrow \nu_\tau \pi^-}}
+\newcommand{\taurho}{\ensuremath{\tau \rightarrow \rho}}
+\newcommand{\taunurho}{\ensuremath{\tau \rightarrow \nu \rho}}
+\newcommand{\tautwopi}{\ensuremath{\tau \rightarrow 2\pi}}
+\newcommand{\Tautwopi}{\ensuremath{\tau^- \rightarrow \nu_\tau \pi^- \pi^0}}
+\newcommand{\tauthreepi}{\ensuremath{\tau \rightarrow 3\pi}}
+\newcommand{\taunuthreepi}{\ensuremath{\tau \rightarrow \nu 3\pi}}
+\newcommand{\Tauthreepi}{\ensuremath{\tau^- \rightarrow \nu_\tau \pi^- \pi^+ \pi^{-}}}
+\newcommand{\Taufourpi}{\ensuremath{\Tauthreepi \pi^0}}
+\newcommand{\Tauthreeprong}{\ensuremath{\Tauthreepi + n \pi^0 (n \geq 0)}}
+\newcommand{\Tauplusthreepi}{\ensuremath{\tau^+ \rightarrow \anu_\tau \pi^+ \pi^- \pi^{+}}}
+\newcommand{\Tauplusthreeprong}{\ensuremath{\Tauplusthreepi + n \pi^0 (n \geq 0)}}
+
+\newcommand{\Rhotwopi}{\ensuremath{\rho^- \rightarrow \pi^- \pi^0}}
+\newcommand{\Aonethreepi}{\ensuremath{a_1^- \rightarrow \pi^- \pi^+ \pi^{-}}}
+\newcommand{\Tauaone}{\ensuremath{\tau^- \rightarrow \nu_\tau a_1^-}}
+
+
+%
+%  my favourite kinematic variables
+%
+
+% first some service definitions:
+
+\newcommand{\vp}{\ensuremath{\vec{p}}}
+\newcommand{\vpof}[1]{\ensuremath{\vp^{\:#1}}}
+\newcommand{\vpoff}[2]{\ensuremath{\vp_{#1}^{\:#2}}}
+\newcommand{\vpt}{\ensuremath{{\vec{p}_T}}}
+\newcommand{\vptof}[1]{\ensuremath{\vpt^{\:#1}}}
+
+
+% E-pL
+
+\newcommand{\empl}{\ensuremath{( E - p_L )}}
+\newcommand{\sumempl}{\ensuremath{\sum_i ( E^i - p_L^i )}}
+
+
+% masses
+
+\newcommand{\minv}{\ensuremath{M_{inv}^{3\pi}}}
+\newcommand{\mr}{\ensuremath{M_R}}
+\newcommand{\Mr}{\ensuremath{M_R^{3\pi-miss}}}
+\newcommand{\mt}{\ensuremath{M_T}}
+\newcommand{\Mt}{\ensuremath{M_T^{3\pi-miss}}}
+\newcommand{\mperp}{\ensuremath{M_\perp}}
+\newcommand{\Mperp}{\ensuremath{M_\perp^{3\pi-miss}}}
+
+
+% energies and momenta
+
+%\newcommand{\enu}{\ensuremath{E^{\nu}}}
+
+%\newcommand{\ehad}{\ensuremath{E^{had}}}
+\newcommand{\phad}{\ensuremath{p^{had}}}
+\newcommand{\phadv}{\ensuremath{\vp^{\:had}}}
+\newcommand{\pthad}{\ensuremath{p_T^{had}}}
+\newcommand{\pthadv}{\ensuremath{\vpt^{\:had}}}
+
+\newcommand{\ethreepi}{\ensuremath{E^{3\pi}}}
+\newcommand{\etthreepi}{\ensuremath{E_T^{3\pi}}}
+\newcommand{\sumetthreepi}{\ensuremath{\displaystyle \sum_{\pi_i \in 3\pi}  E_T^{\pi_i}}}
+\newcommand{\pthreepi}{\ensuremath{p^{3\pi}}}
+\newcommand{\pthreepiv}{\ensuremath{\vp^{\:3\pi}}}
+\newcommand{\ptthreepi}{\ensuremath{p_T^{3\pi}}}
+\newcommand{\ptthreepiv}{\ensuremath{\vpt^{\:3\pi}}}
+\newcommand{\plthreepi}{\ensuremath{p_L^{3\pi}}}
+
+\newcommand{\ptot}{\ensuremath{p^{tot}}}
+\newcommand{\ptotv}{\ensuremath{\vp^{\:tot}}}
+\newcommand{\Ptot}{\ensuremath{ \ptotv  =  \pthreepiv + \phadv }}
+\def\lts#1{\kern+0.1em /\kern-0.65em #1}
+
+\newcommand{\etmiss}{\ensuremath{E_T^{miss}}}
+\newcommand{\ptmiss}{\ensuremath{\lts{p_T}}}
+\newcommand{\ptmissv}{\ensuremath{\vpt^{\:miss}}}
+
+\newcommand{\enutau}{\ensuremath{E^{\nu_\tau}}}
+\newcommand{\etnutau}{\ensuremath{E_T^{\nu_\tau}}}
+\newcommand{\pnutauv}{\ensuremath{\vp^{\:\nu_\tau}}}
+\newcommand{\ptnutau}{\ensuremath{p_T^{\nu_\tau}}}
+\newcommand{\ptnutauv}{\ensuremath{\vpt^{\:\nu_\tau}}}
+\newcommand{\plnutau}{\ensuremath{p_L^{\nu_\tau}}}
+
+%
+% azimuthal angles
+%
+
+\newcommand{\phithreepih}{\ensuremath{\phi_{3\pi-h}}}
+\newcommand{\phimh}{\ensuremath{\phi_{m-h}}}
+\newcommand{\phiphi}{\ensuremath{(\phithreepih,\phimh)}}
+\newcommand{\phithreepim}{\ensuremath{\phi_{3\pi-m}}}
+
+%
+% special analysis variables
+%
+
+\newcommand{\qt}{\ensuremath{q_T}}
+\newcommand{\Qt}{\[    \qt =    \sqrt{ (\pthreepiv)^2 - \frac{(\pthreepiv \cdot \ptotv)^2}{(\ptot)^2} } \]}
+
+\newcommand{\qtold}{\ensuremath{{q\prime}_T}}
+\newcommand{\Qtold}{\[ \qtold = \sqrt{ (\pthreepiv)^2 - \frac{(\pthreepiv \cdot \phadv)^2}{(\phad)^2} } \]}
+
+
+\newcommand{\thetamax}{\ensuremath{\Theta_{max}^{3\pi - \pi}}}
+\newcommand{\gamthree}{\ensuremath{\gamma^{3\pi}}}
+
+\newcommand{\newbetajj}{\ensuremath{\theta_{\pi \pi}}}
+\newcommand{\newthetamax}{\ensuremath{\theta_{\text{max}}}}
+\newcommand{\scalefree}{\ensuremath{\gamthree \newthetamax}}
+
+\newcommand{\pminpi}{\ensuremath{p_{min}^\pi}}
+\newcommand{\st}{\ensuremath{s_T}}
+\newcommand{\St}{\ensuremath{\ptthreepi + \pthad - \ptmiss}}
+\newcommand{\ST}{\ensuremath{s_T = \St\;}}
+
+\newcommand{\igi}{\ensuremath{I_G^i}}
+\newcommand{\igpi}{\ensuremath{I_G^\pi}}
+\newcommand{\igthree}{\ensuremath{I_G^{3\pi}}}
+\newcommand{\igtau}{\ensuremath{I_G^\tau}}
+
+\newcommand{\rt}{\ensuremath{{R_T}}}
+\newcommand{\rtof}[1]{\ensuremath{R_T^{#1}}}
+
+\newcommand{\ptscale}{\ensuremath{\ptthreepi + \pthad + \ptmiss}}
+\newcommand{\Mptscale}{\ensuremath{M = \ptscale\;}}
+
+\newcommand{\muhat}{\ensuremath{\hat{\mu}}}
+\newcommand{\Muhat}{\ensuremath{\frac{\ptthreepi + \ptmiss - \pthad}{\ptscale}}}
+\newcommand{\nuhat}{\ensuremath{\hat{\nu}}}
+\newcommand{\Nuhat}{\ensuremath{\frac{\ptthreepi - \ptmiss}{\pthad}}}
+
+\newcommand{\rhothree}{\ensuremath{\rho^{3\pi}}}
+\newcommand{\Rhothree}{\ensuremath{\frac{\ptthreepi}{\ptscale}}}
+\newcommand{\rhohad}{\ensuremath{\rho^{had}}}
+\newcommand{\Rhohad}{\ensuremath{\frac{\pthad}{\ptscale}}}
+\newcommand{\rhorho}{\ensuremath{(\rhothree,\rhohad)}}
+\newcommand{\rhorhoM}{\ensuremath{(\rhothree,\rhohad,M)}}
+\newcommand{\rhomiss}{\ensuremath{\rho^{miss}}}
+
+
+%
+%  units and elements
+%
+
+\newcommand{\kg}{\ensuremath{\mathrm{kg}}}
+
+\newcommand{\metre}{\ensuremath{\mathrm{m}}}
+\newcommand{\cm}{\ensuremath{\mathrm{cm}}}
+\newcommand{\mm}{\ensuremath{\mathrm{mm}}}
+\newcommand{\micron}{\ensuremath{\mu\mathrm{m}}}
+
+\newcommand{\microsecond}{\ensuremath{\mu\mathrm{s}}}
+\newcommand{\ns}{\ensuremath{\mathrm{ns}}}
+
+\newcommand{\mip}{\mbox{mip}}
+
+\newcommand{\ev}{\ensuremath{\mathrm{eV}}}
+\newcommand{\kev}{\ensuremath{\mathrm{keV}}}
+\newcommand{\mev}{\ensuremath{\mathrm{MeV}}}
+\newcommand{\gev}{\ensuremath{\mathrm{GeV}}}
+
+\newcommand{\tesla}{\ensuremath{\mathrm{T}}}
+\newcommand{\volt}{\ensuremath{\mathrm{V}}}
+\newcommand{\kv}{\ensuremath{\mathrm{kV}}}
+\newcommand{\mv}{\ensuremath{\mathrm{mV}}}
+
+\newcommand{\feff}{\ensuremath{{}^{55} \mathrm{Fe}}}
+\newcommand{\xenon}{\ensuremath{\mathrm{Xe}}}
+\newcommand{\methane}{\ensuremath{\mathrm{CH}_4}}
+\newcommand{\oxygen}{\ensuremath{\mathrm{O}_2}}
+\newcommand{\nitrogen}{\ensuremath{\mathrm{N}_2}}
+\newcommand{\water}{\ensuremath{\mathrm{H}_2 \mathrm{O}}}
+\newcommand{\carbondi}{\ensuremath{\mathrm{CO}_2}}
+\newcommand{\boroncarbide}{\ensuremath{\mathrm{B}_4 \mathrm{C}}}
+
+\newcommand{\cpp}{\ensuremath{\mathrm{C}++}}
+
+\newcommand{\dedx}{\ensuremath{\mathrm{d}E/\mathrm{d}x}}
+
+\newcommand{\ks}{\ensuremath{\mathrm{K}_S^0}}
+\newcommand{\kl}{\ensuremath{\mathrm{K}_L^0}}
+
+
+%
+%  TRD variable equivalents for the thesis
+%
+
+\newcommand{\lh}{\ensuremath{\mathcal{L}}}
+\newcommand{\picon}{\ensuremath{\epsilon_\pi}}
+\newcommand{\elacc}{\ensuremath{\epsilon_e}}
+\newcommand{\elcon}{\ensuremath{\tilde{\epsilon}_e}}
+\newcommand{\piacc}{\ensuremath{\tilde{\epsilon}_\pi}}
+
+\newcommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+\newcommand{\chisq}{\ensuremath{\chi^2}}
+\newcommand{\bfcp}{\ensuremath{\mathbf{FCAL'}}}
+\newcommand{\mathn}{\ensuremath{\mbox{N}}}
+
+
+%
+%  calculus
+%
+
+\newcommand{\dcalc}[1]{\ensuremath{\mathrm{d}#1}}
+\newcommand{\ddcalc}[2]{\ensuremath{\frac{\mathrm{d}#1}{\mathrm{d}#2}}}
+
+
+%
+%  subscripting
+%
+
+\newcommand{\moft}[2]{\ensuremath{#1_{\text{#2}}}}
+
+
+%
+%  customised lists
+%
+
+\newenvironment{itentry}[1]%
+   {\begin{list}{}{\renewcommand{\makelabel}[1]{\textit{##1}\hfill}%
+      \settowidth{\labelwidth}{\textit{#1~~}}%
+      \settowidth{\labelsep}{\textit{~~}}%
+      \setlength{\leftmargin}{\labelwidth+\labelsep}}}%
+   {\end{list}}
+
+\newenvironment{ttentry}[1]%
+   {\begin{list}{}{\renewcommand{\makelabel}[1]{\texttt{##1}\hfill}%
+      \settowidth{\labelwidth}{\texttt{#1~~}}%
+      \settowidth{\labelsep}{\texttt{~~}}%
+      \setlength{\leftmargin}{\labelwidth+\labelsep}}}%
+   {\end{list}}
+
+
+%
+% notation
+%
+
+\newcommand{\bra}[1]{\left\langle #1\right|} % <bra|
+\newcommand{\ket}[1]{\left| #1\right\rangle} % |ket>
+\newcommand{\braket}[2]{\left\langle#1 | #2\right\rangle} % <bra|ket>
+
+
+% lepton types
+
+\newcommand{\tm}{\tau^{-}}
+\newcommand{\mmi}{\mu^{-}}
+\newcommand{\emi}{e^{-}}
+
+%  my favourite kinematic variables
+%
+
+\newcommand{\bjy}{\mbox{$y_{Bj}$}}
+\newcommand{\bjx}{\mbox{$x_{Bj}$}}
+
+%
+% pi's and K's and other beasts
+%
+
+\newcommand{\ave}[1]{\mbox{$\langle#1\rangle$}}
+\newcommand{\pim}{\mbox{$\pi^{-}$}}
+\newcommand{\km}{\mbox{$K^{-}$}}
+\newcommand{\mum}{\mbox{$\mu^-$}}
+\newcommand{\pip}{\mbox{$\pi^{+}$}}
+\newcommand{\kp}{\mbox{$K^{+}$}}
+\newcommand{\mup}{\mbox{$\mu^+$}}
+\newcommand{\ep}{\mbox{$e^+$}}
+\newcommand{\kol}{\mbox{$K^0_L$}}
+\newcommand{\piz}{\mbox{$\pi^{0}$}}                     % pi-zero
+
+%
+% Sanjib's addition
+
+\newcommand{\crs}{\mbox{$\sigma^{CC}(\nu_\mu-N)/E_\nu$}}
+\newcommand{\eff}{\mbox{$\epsilon(E_\nu$)}}
+\newcommand{\enu}{\mbox{$E_{\nu}$}}
+\newcommand{\emu}{\mbox{$E_{\mu}$}}
+\newcommand{\ehad}{\mbox{$E_{HAD}$}}
+

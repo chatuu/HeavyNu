@@ -1,0 +1,1 @@
+../normlist_jpsi.txt

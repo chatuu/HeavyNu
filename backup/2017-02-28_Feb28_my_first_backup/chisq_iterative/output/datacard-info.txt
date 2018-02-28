@@ -1,0 +1,91 @@
+ ntMAX:  16
+ ntyp:  16
+histlist( 1): cohjpsi-mumu_data.h                     
+histlist( 2): cohjpsi-mumu_ccdis.h                    
+histlist( 3): cohjpsi-mumu_jpsi.h                     
+histlist( 4): cohjpsi-mumu_cohpip.h                   
+histlist( 5): cohjpsi-mumu_cohrhop.h                  
+histlist( 6): cohjpsi-mumu_anumucc.h                  
+histlist( 7): cohjpsi-mumu_ncdis.h                    
+histlist( 8): cohjpsi-mumu_anumunc.h                  
+histlist( 9): cohjpsi-mumu_cohpi0.h                   
+histlist(10): cohjpsi-mumu_anuecc.h                   
+histlist(11): cohjpsi-mumu_cohrho0.h                  
+histlist(12): cohjpsi-mumu_nuecc.h                    
+histlist(13): cohjpsi-mumu_obg.h                      
+histlist(14): cohjpsi-mumu_qe.h                       
+histlist(15): cohjpsi-mumu_res.h                      
+histlist(16): cohjpsi-mumu_cohphi0.h                  
+ nfMAX:  20
+ nfloat:  3
+dirnames( 1): hists/                                  
+dirnames( 2): hists/                                  
+dirnames( 3): hists/                                  
+ftag( 1): ccdis     
+ftag( 2): jpsi      
+ftag( 3): cohpip    
+chitit( 1): CCDIS     
+chitit( 2): JPsi      
+chitit( 3): CohPi+Rho+
+ nhMAX:  22
+ nhist:  8
+outdir( 1): mumu2                                        
+outdir( 2): mumu3                                        
+outdir( 3): mumu4                                        
+outdir( 4): mumu34                                       
+outdir( 5): mux2                                         
+outdir( 6): mux3                                         
+outdir( 7): mux4                                         
+outdir( 8): mux34                                        
+ nbinmax:  50
+nbins( 1):   29
+mainid( 1, 1):     18472
+title( 1, 1):  'Mmumu'                                               
+mainid( 2, 1):         0
+title( 2, 1):  'Mmumu'                                               
+mainid( 3, 1):         0
+title( 3, 1):  'Mmumu'                                               
+mainid( 4, 1):     18488
+title( 4, 1):  'Mmumu'                                               
+mainid( 5, 1):     18473
+title( 5, 1):  'Mmumu'                                               
+mainid( 6, 1):         0
+title( 6, 1):  'Mmumu'                                               
+mainid( 7, 1):         0
+title( 7, 1):  'Mmumu'                                               
+mainid( 8, 1):     18489
+title( 8, 1):  'Mmumu'                                               
+nbins( 2):   29
+mainid( 1, 2):     18472
+title( 1, 2):  'Mmumu'                                               
+mainid( 2, 2):         0
+title( 2, 2):  'Mmumu'                                               
+mainid( 3, 2):         0
+title( 3, 2):  'Mmumu'                                               
+mainid( 4, 2):     18488
+title( 4, 2):  'Mmumu'                                               
+mainid( 5, 2):     18473
+title( 5, 2):  'Mmumu'                                               
+mainid( 6, 2):         0
+title( 6, 2):  'Mmumu'                                               
+mainid( 7, 2):         0
+title( 7, 2):  'Mmumu'                                               
+mainid( 8, 2):     18489
+title( 8, 2):  'Mmumu'                                               
+nbins( 3):   29
+mainid( 1, 3):     18472
+title( 1, 3):  'Mmumu'                                               
+mainid( 2, 3):         0
+title( 2, 3):  'Mmumu'                                               
+mainid( 3, 3):         0
+title( 3, 3):  'Mmumu'                                               
+mainid( 4, 3):     18488
+title( 4, 3):  'Mmumu'                                               
+mainid( 5, 3):     18473
+title( 5, 3):  'Mmumu'                                               
+mainid( 6, 3):         0
+title( 6, 3):  'Mmumu'                                               
+mainid( 7, 3):         0
+title( 7, 3):  'Mmumu'                                               
+mainid( 8, 3):     18489
+title( 8, 3):  'Mmumu'                                               

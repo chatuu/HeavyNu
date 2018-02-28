@@ -1,0 +1,260 @@
+* This .kumac puts 3 plots on a single page:
+* 1) The full mass
+* 2) The background fit
+* 3) The calculated signal
+
+**************************
+* Cut number to use:
+cnum = 29
+**************************
+
+******************************
+* Signal range to use for the
+* J/Psi MC normalization:
+* 1 = 2.75-3.45
+* 2 = 2.85-3.35
+* 3 = 2.95-3.25
+normidx=2
+******************************
+
+*********************************************
+* Binning Tags:
+bintag(1)=150mev
+bintag(2)=100mev
+*********************************************
+* Tags for the plot file naming conventions:
+typtag(0)=numucc
+typtag(1)=osdimu
+typtag(2)=lsdimu
+typtag(3)=osmux
+
+dettag(0)=dc
+dettag(1)=other
+dettag(2)=coil
+dettag(3)=upstr
+
+ncndtag(2)=ncand2
+ncndtag(3)=ncand3
+ncndtag(4)=ncand4
+ncndtag(5)=ncand34
+*********************************************
+* Tags for the normalization file naming conventions:
+ftyptag(0)=numucc
+ftyptag(1)=osdimu
+ftyptag(2)=lsdimu
+ftyptag(3)=osmupl
+
+fdettag(0)=drft
+fdettag(1)=othr
+fdettag(2)=coil
+fdettag(3)=upst
+
+fncndtag(2)=ncand2
+fncndtag(3)=ncand3
+fncndtag(4)=ncand4
+fncndtag(5)=ncnd34
+*********************************************
+
+
+zone 1 3
+set mtyp 20
+
+* Loop over binning types:
+do binnum=1,2
+
+filename=output_[bintag([binnum])].h
+hi/file 1 [filename]
+
+* Loop over event types:
+do ityp=0,3
+* Loop over detector sections:
+do idet=0,3
+* Loop over ncand types:
+do incand=2,5
+
+*=============================================
+
+*-------------------------------------------
+*-------------------------------------------
+
+*** Get the histogram IDs:
+exec getid [ityp] [cnum] 1 [idet] [incand] [binnum] 30 
+hid=[@]
+exec getid [ityp] [cnum] 2 [idet] [incand] [binnum] 30 
+hidbkg=[@]
+if [hid] .ne. 0 .and. [hidbkg] .ne. 0 then
+
+
+
+  ** Histogram version of the bkg fit for the full plot range:
+  bkgfitfull= 100 + [ityp]*100 + [idet]*10 + [incand] + 4
+
+  ** J/Psi MC histogram for the full plot range:
+  exec getid 1 [cnum] 1 0 2 [binnum] 30
+  jpsiraw=[@]
+**  jpsiraw=[hid]
+  jpsihistin= [jpsiraw]+1000000 + 1000000*[ityp] + 100000*[idet] + 10000*[incand] 
+
+  ** Calculated signal plot in the fit range:
+  signal=500 + 100*[ityp] + 10*[idet] + [incand]
+
+  ** J/Psi MC histogram in the fit range:
+  jpsifithistin= 500 + [ityp]*100 + [idet]*10 + [incand] + 4
+
+*-------------------------------------------
+*-------------------------------------------
+
+*** Set the J/Psi MC normalization factor:
+ ** Read the normalization from file:
+  normfile=./norms/sigcount_[ftyptag([ityp])]_[fdettag([idet])]_[fncndtag([incand])]_[bintag([binnum])].txt
+  vec/create jpsinorm(3) r
+  vec/read jpsinorm [normfile]
+  signorm=jpsinorm([normidx])
+  /vec/del jpsinorm
+ ** Get the number of events in the MC plot:
+  jpsihist=77
+  jpsifithist=78
+  hi/copy [jpsihistin] [jpsihist]
+  hi/copy [jpsifithistin] [jpsifithist]
+  nevents=$HINFO([jpsihist],'SUM')
+ ** Calculte the normalization and apply it:
+  if [nevents] .gt. 0.0 then
+   signorm = [signorm]/[nevents]
+   exec hnorm [jpsihist] [signorm]
+   exec hnorm [jpsifithist] [signorm]
+  endif
+
+
+ filename=../plots///[typtag([ityp])]///[dettag([idet])]///[ncndtag([incand])]///data-fit-[bintag([binnum])]
+ exec eps open [filename]
+
+*-------------------------------------------
+*-------------------------------------------
+ ** Plot the full mass:
+  hi/pl [hid](1.0:7.0)
+
+ ** Plot the histogram version of the bkg fit:
+  set hcol 2
+  hi/pl [bkgfitfull] histos
+  set hcol 1
+
+ ** Plot the J/Psi MC in the fit range:
+  tmpid=88
+  hi/copy [bkgfitfull] [tmpid]
+  hi/op/add [jpsihist] [bkgfitfull] [bkgfitfull]
+  set hcol 4
+  set htype 444
+  set hwid 4
+  set lwid 4
+  hi/pl [bkgfitfull] U,hist
+  set htyp 0
+  set hcol 2
+  hi/pl [tmpid] histos
+  set hcol 1
+  set hwid 1
+  set lwid 1
+  hi/del [tmpid]
+
+ ** Get the min/max values for line drawing:
+  ymin=$HINFO([hid],'MIN')
+  ymax=$HINFO([hid],'MAX')
+
+ ** Draw lines around signal region:
+  set plci 4
+  set lwid 4
+  dline 2.7 2.7 [ymin] [ymax]
+  dline 3.5 3.5 [ymin] [ymax]
+  set plci 1
+  set lwid 1
+
+*-------------------------------------------
+*-------------------------------------------
+ ** Plot the background fit:
+
+ ** Fit without printing parameters:
+*  op utit
+*  title 'Background Fit' u
+  op nstat
+  op fit
+  vec/create par(5) r
+  set fwid 4
+  set plci 2
+  hi/fit [hidbkg](1.0:7.0) p4 'Q' 5 par
+  set fwid 1
+  set plci 1
+  vec/del par
+  op nfit
+  op stat
+*  op htit
+
+ ** Get the min/max values for line drawing:
+  ymin=$HINFO([hidbkg],'MIN')
+  ymax=$HINFO([hidbkg],'MAX')
+
+ ** Draw lines around signal region:
+  set plci 4
+  set lwid 4
+  dline 2.7 2.7 [ymin] [ymax]
+  dline 3.5 3.5 [ymin] [ymax]
+  set plci 1
+  set lwid 1
+
+*-------------------------------------------
+*-------------------------------------------
+ ** Plot the signal:
+  hi/pl [signal]
+
+ ** Plot the J/Psi MC in the fit range:
+  set hcol 4
+  set htype 444
+  set hwid 4
+  set lwid 4
+  hi/pl [jpsifithist] histos
+  set lwid 1
+  set htyp 0
+  set hcol 1
+  set hwid 1
+
+ ** Get the min/max values for line drawing:
+  xmin=$HINFO([signal],'XMIN')
+  xmax=$HINFO([signal],'XMAX')
+  ymin=$HINFO([signal],'MIN')
+  ymax=$HINFO([signal],'MAX')
+
+ ** Draw lines around signal region:
+  set plci 4
+  set lwid 4
+  dline 2.7 2.7 [ymin] [ymax]
+  dline 3.5 3.5 [ymin] [ymax]
+  set plci 1
+  set lwid 1
+
+ ** Draw a zero line:
+  set ltyp 2
+  set lwid 3
+  dline [xmin] [xmax] 0.0 0.0
+  set ltyp 1
+  set lwid 1
+
+* Delete temporary histogram IDs:
+hi/del [jpsihist]
+hi/del [jpsifithist]
+
+
+ exec eps close
+
+else
+*message Skipping ityp [ityp], idet [idet], incand [incand]
+endif
+*=============================================
+
+enddo
+enddo
+enddo
+
+close 1
+hi/del *
+
+enddo
+
+

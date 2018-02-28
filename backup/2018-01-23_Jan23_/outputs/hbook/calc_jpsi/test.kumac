@@ -1,0 +1,50 @@
+cnum=29
+
+normidx=2
+
+bintag(1)=150mev
+
+binnum=1
+
+typtag(1)=osdimu
+
+dettag(0)=dc
+
+ncndtag(2)=ncand2
+
+ftyptag(1)=osdimu
+
+fncndtag(2)=ncand2
+
+zone 1 3
+
+set mtyp 20
+
+filename=output_[bintag([binnum])].h
+
+hi/file 1 [filename]
+
+
+
+ityp=0
+* Loop over detector sections:
+idet=0
+* Loop over ncand types:
+incand=2
+
+
+
+
+
+
+exec getid [ityp] [cnum] 1 [idet] [incand] [binnum] 30
+
+
+hid=[@]
+
+
+exec getid [ityp] [cnum] 2 [idet] [incand] [binnum] 30
+
+hidbkg=[@]
+
+mess getid [ityp] [cnum] 1 [idet] [incand] [binnum] 30

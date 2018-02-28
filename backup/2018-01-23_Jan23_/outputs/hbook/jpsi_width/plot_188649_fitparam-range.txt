@@ -1,0 +1,30 @@
+  MINUIT RELEASE 96.03  INITIALIZED.   DIMENSIONS 100/ 50  EPSMAC=  0.89E-15
+ **********
+ **    1 **SET EPS  0.1000E-06
+ **********
+ FLOATING-POINT NUMBERS ASSUMED ACCURATE TO   0.100E-06
+ **********
+ **    2 **SET ERR   1.000    
+ **********
+1
+
+     **********************************************
+     *                                            *
+     * Function minimization by SUBROUTINE HFITGA *
+     * Variable-metric method                     *
+     * ID =     188649  CHOPT = TUR               *
+     *                                            *
+     **********************************************
+ Convergence when estimated distance to minimum (EDM) .LT.  0.10E+01
+
+ FCN=   70.61908     FROM MIGRAD    STATUS=FAILED        75 CALLS       76 TOTAL
+                     EDM=  0.26E-01  STRATEGY=1  ERROR MATRIX UNCERTAINTY=  0.2%
+
+  EXT PARAMETER                APPROXIMATE        STEP         FIRST   
+  NO.   NAME        VALUE          ERROR          SIZE      DERIVATIVE 
+   1   Constant     2.5522       0.10201E-01    0.0000       0.58462    
+   2   Mean         3.0953       0.17565E-03    0.0000       -1110.2    
+   3   Sigma       0.81678E-01   0.36174E-03    0.0000       -11.785    
+
+ CHISQUARE = 0.2354E+02  NPFIT =     6
+

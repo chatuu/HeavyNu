@@ -1,0 +1,86 @@
+---- Histogram filenames for each data type and number of types:
+16
+cohjpsi-mumu_data.h
+cohjpsi-mumu_ccdis.h
+cohjpsi-mumu_jpsi.h
+cohjpsi-mumu_cohpip.h
+cohjpsi-mumu_cohrhop.h
+cohjpsi-mumu_anumucc.h
+cohjpsi-mumu_ncdis.h
+cohjpsi-mumu_anumunc.h
+cohjpsi-mumu_cohpi0.h
+cohjpsi-mumu_anuecc.h
+cohjpsi-mumu_cohrho0.h
+cohjpsi-mumu_nuecc.h
+cohjpsi-mumu_obg.h
+cohjpsi-mumu_qe.h
+cohjpsi-mumu_res.h
+cohjpsi-mumu_cohphi0.h
+
+---- Number of floated compnents: (should be 2nd, 3rd... listed histograms) 
+3
+---- Location of CCDIS histogram files:
+hists/
+---- Location of JPsi histogram files:
+hists/
+---- Location of CohPi+ histogram files:
+hists/
+
+---- Floated CC coherent component index (cohpip):
+4
+---- Coherent CC component to be added to cohpip (cohrhop):
+5
+
+---- File tags for floated components:
+ccdis
+jpsi
+cohpip
+
+---- Titles for floated components:
+CCDIS
+JPsi
+CohPi+Rho+
+  
+---- Number of groups of plots and output directories:
+8
+mumu2
+mumu3
+mumu4
+mumu34
+mux2
+mux3
+mux4
+mux34
+  
+---- CCDIS Normalization Plot(s) and bins:
+29
+ 1 29 01 0 2 12 30 'Mmumu'
+ 1 29 01 0 3 12 30 'Mmumu'
+ 1 29 01 0 4 12 30 'Mmumu'
+ 1 29 01 0 5 12 30 'Mmumu'
+ 3 29 01 0 2 12 30 'Mmumu'
+ 3 29 01 0 3 12 30 'Mmumu'
+ 3 29 01 0 4 12 30 'Mmumu'
+ 3 29 01 0 5 12 30 'Mmumu'
+  
+---- JPsi Normalization Plot(s) and bins:
+29
+ 1 29 01 0 2 12 30 'Mmumu'
+ 1 29 01 0 3 12 30 'Mmumu'
+ 1 29 01 0 4 12 30 'Mmumu'
+ 1 29 01 0 5 12 30 'Mmumu'
+ 3 29 01 0 2 12 30 'Mmumu'
+ 3 29 01 0 3 12 30 'Mmumu'
+ 3 29 01 0 4 12 30 'Mmumu'
+ 3 29 01 0 5 12 30 'Mmumu'
+  
+---- CohPi+ Normalization Plot(s) and bins:
+29
+ 1 29 01 0 2 12 30 'Mmumu'
+ 1 29 01 0 3 12 30 'Mmumu'
+ 1 29 01 0 4 12 30 'Mmumu'
+ 1 29 01 0 5 12 30 'Mmumu'
+ 3 29 01 0 2 12 30 'Mmumu'
+ 3 29 01 0 3 12 30 'Mmumu'
+ 3 29 01 0 4 12 30 'Mmumu'
+ 3 29 01 0 5 12 30 'Mmumu'

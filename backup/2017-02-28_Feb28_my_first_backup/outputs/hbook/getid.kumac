@@ -1,0 +1,13 @@
+macro getid cc ii ee dd nn bb vv
+
+** cc = Event topology
+** ii = Cut number
+** ee = Extra cut
+** dd = Detector section
+** nn = Ncand type
+** bb = Bin number
+** vv = Variable number
+
+histid=$ICALL('getid.F('//[cc]//','//[ii]//','//[ee]//','//[dd]//','//[nn]//','//[bb]//','//[vv]//')')
+
+return [histid]

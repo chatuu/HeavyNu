@@ -1,0 +1,595 @@
+\documentclass{article}
+%\usepackage{times}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{verbatim}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{float}
+\usepackage{pdflscape} % landscape for pdflatex
+\usepackage{wrapfig} % wrap text around figures
+\usepackage{rotating}
+\usepackage{mycommands}
+\usepackage{afterpage}
+\usepackage[top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+\usepackage{comment} % For debugging
+\usepackage{subfigure}
+\usepackage{sectsty} % Set section styling
+\usepackage[percent]{overpic} % For writing on top of figures
+%\usepackage{hyperref} % Hyperlinks in TOC
+
+\setlength{\abovecaptionskip}{0pt} % Space above Captions
+\setlength{\belowcaptionskip}{0pt} % Space below Captions
+\setlength{\floatsep}{0pt} % Space between floats
+\setlength{\textfloatsep}{0pt} % Space between floats and text
+
+%==================================
+%  Define Colors
+\definecolor{violet}{RGB}{238,130,238}
+\definecolor{dviolet}{RGB}{148,0,211}
+%==================================
+
+% Blue Star:
+\newcommand{\bstar}{{\color{blue}$\boldsymbol{\ast}$}}
+
+
+% sectsty commands:
+\chapterfont{\color{blue}}  % sets colour of chapters
+\sectionfont{\color{dviolet}}  % sets colour of sections
+\subsectionfont{\color{blue}}
+\subsubsectionfont{\color{blue}}
+
+
+%==============Define Symbols==============#
+
+\def\nb {\mbox{\boldmath $\overline{\nu}$}}
+
+\def\nm {\mbox{\boldmath $\nu_\mu$}} 
+\def\anm{\mbox{\boldmath $\bar\nu_\mu$}} 
+\def\ne {\mbox{\boldmath $\nu_e$}} 
+\def\ane{\mbox{\boldmath $\bar\nu_e$}} 
+
+\def\pip{\mbox{\boldmath $\pi^+$}} 
+\def\pim{\mbox{\boldmath $\pi^-$}} 
+\def\mup{\mbox{\boldmath $\mu^+$}} 
+\def\mum{\mbox{\boldmath $\mu^-$}} 
+\def\kap{\mbox{\boldmath $K^+$}} 
+\def\kam{\mbox{\boldmath $K^-$}} 
+\def\kl {\mbox{\boldmath $K^0_L$}} 
+\def\ks {\mbox{\boldmath $K^0_S$}} 
+
+
+\def\nmne{\mbox{\boldmath $\nu_{\mu}\rightarrow\nu_{e}$}} 
+\def\nmnt{\mbox{\boldmath $\nu_{\mu}\rightarrow\nu_{\tau}$}} 
+\def\nmnx{\mbox{\boldmath $\nu_\mu\rightarrow\nu_x$}} 
+\def\nent{\mbox{\boldmath $\nu_e\rightarrow\nu_\tau$}} 
+\def\nenx{\mbox{\boldmath $\nu_e\rightarrow\nu_x$}} 
+
+\def\enu {\mbox{\boldmath $E_{\nu}$}}
+\def\emu {\mbox{\boldmath $E_{\mu}$}}
+\def\eh{\mbox{\boldmath $E_{Had}$}}
+
+\def\nova{NO$\nu$A} 
+\def\cohp{\boldmath {Coh$\pi^0$} }
+\def\cohpip{\boldmath {Coh$\pi^+$} }
+\def\cohpiz{\boldmath {Coh$\pi^0$} }
+\def\cohr{\boldmath {Coh$\rho^0$} }
+\def\cohrz{\boldmath {Coh$\rho^0$} }
+\def\cohrp{\boldmath {Coh$\rho^+$} }
+\def\cohphi{\boldmath {Coh$\phi^0$} }
+\def\cohjp{\boldmath {Coh$J/\psi$} }
+\def\piz{\boldmath {$\pi^0 $} }
+\def\mpiz{\boldmath {M$_\pi^0 $} }
+\def\mgg{\boldmath {M$_{\gamma \gamma} $} }
+\def\gam{\boldmath {$\gamma $} }
+\def\gf{\boldmath {$\gamma 1$} }
+\def\gs{\boldmath {$\gamma 2$} }
+\def\A{\boldmath {${\cal A}$} }
+\def\zt{\boldmath {$\zeta$}}
+\def\ztp{\boldmath {$\zeta_{\pi^0}$}}
+\def\ztgg{\boldmath {$\zeta_{\gamma \gamma}$}}
+\def\ztf{\boldmath {$\zeta_{\gamma 1}$}}
+\def\zts{\boldmath {$\zeta_{\gamma 2}$}}
+\def\thfs{\boldmath {$\Theta_{1 2}$}}
+
+\def\zetap{\boldmath {$\zeta_{K^{+}}$}}
+\def\zetam{\boldmath {$\zeta_{K^{-}}$}}
+\def\zetar{\boldmath {$\zeta_{\pi \pi}$}}
+\def\zetaphi{\boldmath {$\zeta_{KK}$}}
+\def\phiop{\boldmath {$\phi_{12}$}}
+
+\def\pkpos{\boldmath {$P_{K^{+}}$}}
+\def\pkneg{\boldmath {$P_{K^{-}}$}}
+
+\def\ptr{\boldmath {$P_{t} \pi \pi$}}
+\def\ptphi{\boldmath {$P_{t} KK$}}
+\def\ptpipos{\boldmath {$P_{t} \pi^{+}$}}
+\def\ptpineg{\boldmath {$P_{t} \pi^{-}$}}
+\def\ptkpos{\boldmath {$P_{t} K^{+}$}}
+\def\ptkneg{\boldmath {$P_{t} K^{-}$}}
+
+\def\erho{\boldmath {$E_{\pi \pi}$}}
+\def\ephi{\boldmath {$E_{KK}$}}
+\def\pphi{\boldmath {$P_{KK}$}}
+\def\thetar{\boldmath {$\theta_{\pi \pi}$}}
+\def\thetaphi{\boldmath {$\theta_{KK}$}}
+\def\thetaop{\boldmath {$\theta_{12}$}}
+\def\thetap{\boldmath {$\theta_{K^{+}}$}}
+\def\thetam{\boldmath {$\theta_{K^{-}}$}}
+
+\def\mpipi{\boldmath {$M_{\pi \pi}$}}
+\def\mkk{\boldmath {$M_{KK}$}}
+
+\def\phipt{\boldmath {$\phi_{KK}$}}
+
+%========================================%
+% Add a figure with captions HERE!
+% 1st argument: Filename
+% 2nd argument: Size in ratio of \textwidth
+% 3rd argument: Caption
+%
+% Example:
+%    \addfig{foo.pdf}{0.9}{A foo caption}
+\newcommand{\addfig}[3]{
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=#2\textwidth]{#1}
+\caption{#3   \textbf{(#1)}}
+\end{center}
+\end{figure}
+}
+%========================================%
+% Two figures side-by-side
+% 1st argument: First Filename
+% 2nd argument: First Caption
+% 3rd argument: Second Filename
+% 4th argument: Second Caption
+% 5th argument: Total Caption
+% 6th argument: Size of each in ratio of \textwidth (should be near 0.45)
+\newcommand{\twofig}[6]{
+\begin{figure}[ht]
+\centering
+\subfigure[#2 \textbf{(#1)}]{
+	\includegraphics[width=#6\textwidth]{#1}}
+\quad
+\subfigure[#4 \textbf{(#3)}]{
+	\includegraphics[width=#6\textwidth]{#3}}
+\caption{#5}
+\end{figure}
+}
+%========================================%
+% Two figures side-by-side in landscape
+% 1st argument: First Filename
+% 2nd argument: First Caption
+% 3rd argument: Second Filename
+% 4th argument: Second Caption
+% 5th argument: Total Caption
+% 6th argument: Size of each in ratio of \textwidth (should be near 0.45)
+\newcommand{\twofigls}[6]{
+\clearpage\newpage
+\begin{landscape}
+\begin{figure}[ht]
+\centering
+\subfigure[#2 \textbf{(#1)}]{
+	\includegraphics[width=#6\textwidth]{#1}}
+\quad
+\subfigure[#4 \textbf{(#3)}]{
+	\includegraphics[width=#6\textwidth]{#3}}
+\caption{#5}
+\end{figure}
+\end{landscape}
+}
+%========================================%
+% Two figures up-down
+% 1st argument: First Filename
+% 2nd argument: First Caption
+% 3rd argument: Second Filename
+% 4th argument: Second Caption
+% 5th argument: Total Caption
+\newcommand{\twofigud}[5]{
+\begin{figure}[ht]
+\centering
+\subfigure[#2 \textbf{(#1)}]{
+	\includegraphics[width=0.5\textwidth]{#1}}
+\quad
+\subfigure[#4 \textbf{(#3)}]{
+	\includegraphics[width=0.5\textwidth]{#3}}
+\caption{#5}
+\end{figure}
+}
+%========================================%
+% Three figures grouped
+% 1st argument: First Filename
+% 2nd argument: First Caption
+% 3rd argument: Second Filename
+% 4th argument: Second Caption
+% 5th argument: Third Filename
+% 6th argument: Third Caption
+% 7th argument: Total Caption
+\newcommand{\threefig}[7]{
+\begin{figure}[h!]
+\centering
+\subfigure[#2 \textbf{(#1)}]{
+	\includegraphics[width=0.45\textwidth]{#1}}
+\quad
+\subfigure[#4 \textbf{(#3)}]{
+	\includegraphics[width=0.45\textwidth]{#3}}
+\subfigure[#6 \textbf{(#5)}]{
+	\includegraphics[width=0.45\textwidth]{#5}}
+\caption{#7}
+\end{figure}
+}
+%========================================%
+% Four figures grouped
+% 1st argument: First Filename
+% 2nd argument: First Caption
+% 3rd argument: Second Filename
+% 4th argument: Second Caption
+% 5th argument: Third Filename
+% 6th argument: Third Caption
+% 7th argument: Fourth Filename
+% 8th argument: Fourth Caption
+% 9th argument: Total Caption
+\newcommand{\fourfig}[9]{
+\begin{figure}[ht]
+\centering
+\subfigure[#2 \textbf{(#1)}]{
+	\includegraphics[width=0.45\textwidth]{#1}}
+\quad
+\subfigure[#4 \textbf{(#3)}]{
+	\includegraphics[width=0.45\textwidth]{#3}}
+\subfigure[#6 \textbf{(#5)}]{
+	\includegraphics[width=0.45\textwidth]{#5}}
+\quad
+\subfigure[#8 \textbf{(#7)}]{
+	\includegraphics[width=0.45\textwidth]{#7}}
+\caption{#9}
+\end{figure}
+}
+%========================================%
+%========================================%
+% Overpic Placement
+% 1st argument: First filename
+% 2nd argument: Second filename
+% 3rd argument: X-Position
+% 4rd argument: Y-Position
+\newcommand{\opic}[4]{
+\clearpage\newpage
+%\begin{overpic}[width=1.0\textwidth,grid,tics=10] %Print grid for positioning
+\begin{overpic}[width=1.0\textwidth]
+{#1}
+\put(#3,#4){\includegraphics[width=0.65\textwidth]{#2}}
+\end{overpic}
+}
+%========================================%
+%========================================%
+
+
+
+
+
+\begin{document}
+
+
+\input{title.tex}
+\maketitle
+
+\vspace{\fill}
+
+
+
+%=========================================================================>
+%=========================================================================>
+%=========================================================================>
+
+%0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+%0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+% Zeroth Norms
+\clearpage\newpage
+
+\section{Zeroth Norms}
+\label{sec-zeroth-norms}
+
+%  Table \ref{tab-gen-numbers} shows the generated,
+%  MC-Z-weighted number of events to pass basic
+%  cuts.  These numbers are used for weighting to the
+%  desired number of "Zeroth Norm" events.
+
+%\vspace{3ex}
+%  \textbf{The cuts include:}
+%  \begin{enumerate}
+%    \item Fid $|$x,y-5$|$$\leq$130 ;  5$<$zvs$<$405
+%    \item  Pfermi cut
+%    \item $W^{2}$ cut (DIS only)
+%  \end{enumerate}
+%\vspace{3ex}
+
+\vspace{5ex}
+
+\input{zeroth_norms.tex}
+
+\vspace{5ex}
+\begin{itemize}
+\item[] \textbf{\underline{\color{dviolet} Extra Normalizations:}}
+\item[\bstar] Coh$\boldsymbol{\pi^+}$: 0.985 \;\;\; (From 2V0 analysis)
+\item[\bstar] Coh$\boldsymbol{\pi^0}$: 0.985 \;\;\; (From 2V0 analysis)
+\item[\bstar] Coh$\boldsymbol{\rho^+}$: 0.669 \;\;\; (From CohRho0 measurment)
+\item[\bstar] Coh$\boldsymbol{\rho^0}$: 0.669 \;\;\; (From CohRho0 measurment)
+\item[\bstar] OBG: 0.22 (from CohRho0 analysis)
+\end{itemize}
+
+
+%0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+%0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+% Data Fit
+\clearpage\newpage
+
+% 150MeV fit:
+\begin{figure}
+\begin{minipage}[c]{0.76\textwidth}
+    \includegraphics[width=\textwidth]{./figs/data-fit-150mev.pdf}
+\end{minipage}%
+\begin{minipage}[c]{0.2\textwidth}
+\input{sigcalc-150mev.tex}
+\end{minipage}
+    \caption{150MeV Data Fit. Signal MC set to calculations in 2nd range. \textbf{(./figs/data-fit-150mev.pdf)(sigcalc-150mev.tex)}}
+\end{figure}
+
+% 100MeV fit:
+\begin{figure}
+\begin{minipage}[c]{0.76\textwidth}
+    \includegraphics[width=\textwidth]{./figs/data-fit-100mev.pdf}
+\end{minipage}%
+\begin{minipage}[c]{0.2\textwidth}
+\input{sigcalc-100mev.tex}
+\end{minipage}
+    \caption{100MeV Data Fit. Signal MC set to calculations in 2nd range. \textbf{(./figs/data-fit-100mev.pdf)(sigcalc-150mev.tex)}}
+\end{figure}
+
+%0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+%0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+% MC Chisq Fit
+\clearpage\newpage
+\section{MC $\chi^2$ Fit}
+
+\addfig{./figs/mass-0.9to5-150mev.pdf}{0.8}{}
+
+\clearpage\newpage
+\addfig{chisq-jpsi.pdf}{0.7}{}
+\input{chisq_jpsi.tex}
+\clearpage\newpage
+\addfig{chisq-cohpip.pdf}{0.7}{}
+\input{chisq_cohpip.tex}
+\clearpage\newpage
+\addfig{chisq-ccdis.pdf}{0.7}{}
+\input{chisq_ccdis.tex}
+
+
+%0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+%0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+% Summary Cut Tables 
+\clearpage\newpage
+\section{Summary Cut Tables}
+
+\input{cuts/cut_summary_latex_allev.tex}
+\input{cuts/cut_summary_latex_mblnd.tex}
+\input{cuts/cut_summary_latex_m-sig.tex}
+
+
+%0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+%0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+% Plots
+\clearpage\newpage
+\section{Plots}
+
+%======================================================
+%======================================================
+% Vertex Plot
+\addfig{./figs/vertex.pdf}{0.9}{}
+ 
+%======================================================
+%======================================================
+% Mass Plots
+\clearpage\newpage
+\addfig{./figs/mass-0.9to5-300mev.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/mass-0.9to5-150mev.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/mass-0.9to5-100mev.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/mass-0.9to5-75mev.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/mass-0.9to5-50mev.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/mass-0to5-300mev.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/mass-0to5-150mev.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/mass-0to5-100mev.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/mass-0to7-150mev.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/mass-0to7-100mev.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/mass-0to7-75mev.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/mass-2to4-100mev.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/mass-2to4-75mev.pdf}{0.9}{}
+ 
+%======================================================
+%======================================================
+% ZetaMuMu Plots
+\clearpage\newpage
+\addfig{./figs/zetamumu.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/zetamumu-mb.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/zetamumu-msig.pdf}{0.9}{}
+
+%======================================================
+%======================================================
+% P-Pt MuMu Plots
+\clearpage\newpage
+\addfig{./figs/p-pt-mumu.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/p-pt-mumu-mb.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/p-pt-mumu-msig.pdf}{0.9}{}
+ 
+%======================================================
+%======================================================
+% ThetaMuMu Plots
+\clearpage\newpage
+\addfig{./figs/thetamumu-theta12.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/thetamumu-theta12-mb.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/thetamumu-theta12-msig.pdf}{0.9}{}
+ 
+%======================================================
+%======================================================
+% P Asym Plots
+\clearpage\newpage
+\addfig{./figs/pasym.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/pasym-mb.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/pasym-msig.pdf}{0.9}{}
+ 
+%======================================================
+%======================================================
+% Phi12 Plots
+\clearpage\newpage
+\addfig{./figs/phi12.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/phi12-mb.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/phi12-msig.pdf}{0.9}{}
+ 
+%======================================================
+%======================================================
+% Eneut Plots
+\clearpage\newpage
+\addfig{./figs/eneut.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/eneut-mb.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/eneut-msig.pdf}{0.9}{}
+ 
+%======================================================
+%======================================================
+% Ehcal Plots
+\clearpage\newpage
+\addfig{./figs/ehcal.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/ehcal-mb.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/ehcal-msig.pdf}{0.9}{}
+ 
+%======================================================
+%======================================================
+% PneutH Plots
+\clearpage\newpage
+\addfig{./figs/pneuth.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/pneuth-mb.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/pneuth-msig.pdf}{0.9}{}
+ 
+%======================================================
+%======================================================
+% PtneutH Plots
+\clearpage\newpage
+\addfig{./figs/ptneuth.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/ptneuth-mb.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/ptneuth-msig.pdf}{0.9}{}
+ 
+%======================================================
+%======================================================
+% Zeta+ and Zeta- Plots
+\clearpage\newpage
+\addfig{./figs/zeta1+2.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/zeta1+2-mb.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/zeta1+2-msig.pdf}{0.9}{}
+ 
+%======================================================
+%======================================================
+% P-Pt Mu- Plots
+\clearpage\newpage
+\addfig{./figs/p-pt-muneg.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/p-pt-muneg-mb.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/p-pt-muneg-msig.pdf}{0.9}{}
+ 
+%======================================================
+%======================================================
+% P-Pt Mu+ Plots
+\clearpage\newpage
+\addfig{./figs/p-pt-mupos.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/p-pt-mupos-mb.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/p-pt-mupos-msig.pdf}{0.9}{}
+ 
+%======================================================
+%======================================================
+% Theta+ and Theta- Plots
+\clearpage\newpage
+\addfig{./figs/theta1+2.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/theta1+2-mb.pdf}{0.9}{}
+%%
+\clearpage\newpage
+\addfig{./figs/theta1+2-msig.pdf}{0.9}{}
+ 
+%======================================================
+%======================================================
+% Theta-xy Plots
+\clearpage\newpage
+\addfig{./figs/thetaxy.pdf}{0.9}{}
+ 
+\end{document}

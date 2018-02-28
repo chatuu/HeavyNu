@@ -1,0 +1,9 @@
+macro copyplot cc ii ee dd nn bb vv outid 
+
+exec getcheckid [ee] [dd] [nn]
+tt=[@]
+** Histogram ID number to be read from each file:
+exec gethistid [cc] [ii] [tt] [bb] [vv]
+histid=[@]
+
+hi/copy [histid] [outid] 

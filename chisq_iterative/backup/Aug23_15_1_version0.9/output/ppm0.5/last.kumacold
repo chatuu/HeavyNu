@@ -1,0 +1,30 @@
+*** Begin of history file: Fri Aug 21 10:31:44 2015
+hi/file 1 chisq_coh.h
+hi/pl 101
+hi/list
+hi/pl -367915776
+hi/pl -967915776
+hi/pl -1127020231
+hi/pl 1127020231
+hi/pl 1227020231
+hi/pl 1127020231
+hi/pl 1227020231 histos
+hi/pl 1327020231 histos
+hi/pl 1427020231 histos
+hi/pl 1527020231 histos
+hi/pl 1627020231 histos
+hi/pl 1727020231 histos
+hi/pl 101
+close 1
+hi/file 1 chisq_nc.h
+hi/list
+hi/pl 101
+close 1
+hi/file 1 chisq_cc.h
+hi/pl 101
+close 1
+hi/file 1 chisq_nc.h
+hi/list
+hi/pl 1127020231
+exit
+*** End   of history file: Fri Aug 21 10:38:03 2015

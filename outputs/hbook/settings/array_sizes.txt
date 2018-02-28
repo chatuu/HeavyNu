@@ -1,0 +1,6 @@
+   30 : ncuts       
+    4 : ndetsec     
+    4 : nevtyp      
+    4 : nncand      
+   47 : nvar        
+    4 : nextyp      

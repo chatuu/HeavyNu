@@ -1,0 +1,3 @@
+nvalext(  1):          4
+nvalext(  2):          2
+nvalext(  3):          2

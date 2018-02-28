@@ -1,0 +1,126 @@
+macro plot cc ii ee dd nn bb vv key='stat' 
+
+* This macro plots Data 
+
+* Histogram ID:  iittbbnn
+* cc = event classification
+* ii = cut number
+* ee = Extra cut
+* dd = Detector section
+* nn = Ncand type
+* bb = Bin Variation
+* vv = Variable Number
+
+* "norm" is either "mass" or "zeta", and gives the normalization files to use
+
+* key gives the legend/statistics box options:
+*  yeskey --> Shows legend in upper right
+*   right --> Same as "yeskey"
+*    left --> Shows legend in upper left
+*    zone --> Upper right for zone 1 2 (two vertical plots)
+*   zonel --> Upper left for zone 1 2 (two vertical plots)
+*   nokey --> Snows nothing
+*    stat --> Shows the stat box in the top right 
+
+* Get the extra cut ID number:
+exec getcheckid [ee] [dd] [nn]
+tt=[@]
+
+
+*=============================*
+* Key type setup:
+if [key] .eq. 'nokey' then
+op nstat
+elseif [key] .eq. 'stat' then
+op stat
+set stat 1111111
+else
+op nstat
+endif
+*=============================*
+
+** Format Settings:
+*Size 18 24
+*Option NBOX
+set gfon -40 
+set gsiz 0.5 
+set asiz 0.36
+set vsiz 0.36
+set cfon -60
+set vfon -70
+set lfon -60
+*set yhti 1.0
+set xmgr 1.5
+set xmgl 2.5
+set xlab 1.6
+set tfon -20
+set tsiz 0.4
+set ksize .18
+
+
+
+
+
+
+
+*0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+*0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+*0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+** USER INPUT:
+
+** Histogram ID number to be read from each file:
+exec gethistid [cc] [ii] [tt] [bb] [vv]
+histid=[@]
+
+
+** Set temporary histogram starting number:
+**  (fewer than 20 histograms will be made,
+**   starting with this number)
+startnum=200
+
+
+** Set input histogram filenames:
+hfile(0) =cohjpsi-mumu_data.h
+** Set temporary id numbers:
+   tmpid(0)=[startnum]
+data    =[tmpid(0)]
+
+*0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+*0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+*0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+
+
+********************************
+** Copy Original Hists:
+   hi/file 1 [hfile(0)]
+   hi/copy [histid] [tmpid(0)]
+   close 1
+
+
+
+
+*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+set hwid 4
+set mtyp 20
+
+set pmci 1
+set hcol 1
+hi/pl [data] 
+
+
+set hwid 1
+
+
+
+
+atitle '' 'Number of Events' u
+
+hi/del *
+
+
+

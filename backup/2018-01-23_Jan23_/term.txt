@@ -1,0 +1,1026 @@
+
+Cuts Cleaned!
+
+g77 -g   -c -o load_bins.o load_bins.F
+g77 -g   -c -o angle_cal.o angle_cal.F
+g77 -g   -c -o print_zeroth_norms.o print_zeroth_norms.F
+g77 -g   -c -o ismu.o ismu.F
+g77 -g   -c -o usecorr_1D.o usecorr_1D.F
+g77 -g   -c -o print_renorms.o print_renorms.F
+g77 -g   -c -o findzsec.o findzsec.F
+g77 -g   -c -o muon_extrapolation.o muon_extrapolation.F
+g77 -g   -c -o label_muid.o label_muid.F
+g77 -g   -c -o switchmu.o switchmu.F
+g77 -g   -c -o muon_calculations.o muon_calculations.F
+g77 -g   -c -o dcveto.o dcveto.F
+g77 -g   -c -o initvar.o initvar.F
+g77 -g   -c -o read_1dcorr.o read_1dcorr.F
+g77 -g   -c -o checkeventerr.o checkeventerr.F
+g77 -g   -c -o closeevtpic.o closeevtpic.F
+g77 -g   -c -o sumintarr1d.o sumintarr1d.F
+g77 -g   -c -o usecorr_2D.o usecorr_2D.F
+g77 -g   -c -o open_phi.o open_phi.F
+g77 -g   -c -o timestamp.o timestamp.F
+g77 -g   -c -o setbin.o setbin.F
+g77 -g   -c -o write_evt_table.o write_evt_table.F
+g77 -g   -c -o check_print_settings.o check_print_settings.F
+g77 -g   -c -o openntuple.o openntuple.F
+g77 -g   -c -o labtobeam.o labtobeam.F
+g77 -g   -c -o getid.o getid.F
+rm -f main
+g77-3.4.6 -g -o main main.o \
+findopenunit.o printerror.o faildimu.o print_renorms.o calcphi.o countevent.o fillhists.o leftalg.o initvar.o muon_extrapolation.o switchmu.o cut_table.o bookhistos.o ismu.o McWtDC_wts.o read_1dcorr.o closeevtpic.o open_phi.o label_muid.o openntuple.o getid.o process_event.o failall.o findzsec.o openevtpic.o print_zeroth_norms.o usecorr_1D.o setbin.o muon_calculations.o closentuple.o load_bins.o sumintarr1d.o dcveto.o read_2dcorr.o usecorr_2D.o timestamp.o write_evt_table.o check_print_settings.o checkeventerr.o labtobeam.o angle_cal.o \
+ -L/data/gonzo3/cern/pro/lib   `cernlib pdflib pawlib graflib packlib mathlib kernlib`
+g77 -g   -c -o main.o main.F
+g77 -g   -c -o chi.o chi.F
+g77 -g   -c -o printmain.o printmain.F
+g77 -g   -c -o getid.o getid.F
+g77 -g   -c -o read_datacard.o read_datacard.F
+rm -f main
+g77 -g -o main main.o \
+chi.o printmain.o getid.o read_datacard.o \
+ -L/data/gonzo3/cern/pro/lib `cernlib pawlib graflib packlib mathlib kernlib`
+ 
+ 
+ ---=== Reading Datacard ===---
+ 
+ ---=== Iteration loop  1 ===---
+ Skipping ihist  2
+ Skipping ihist  3
+ Skipping ihist  6
+ Skipping ihist  7
+ ---=== Iteration loop  2 ===---
+ ---=== Iteration loop  3 ===---
+ ---=== Iteration loop  4 ===---
+ ---=== Iteration loop  5 ===---
+ ---=== Iteration loop  6 ===---
+ ---=== Iteration loop  7 ===---
+ ---=== Iteration loop  8 ===---
+ ---=== Iteration loop  9 ===---
+ ---=== Iteration loop  10 ===---
+ ---=== Iteration loop  11 ===---
+ ---=== Iteration loop  12 ===---
+ ---=== Iteration loop  13 ===---
+ 
+ 
+ ============================
+ ==  Iteration Converged!  ==
+ ============================
+ 
+ ---=== Printing Output ===---
+ 
+ 
+ ******************
+ ***  JOB DONE  ***
+ ******************
+ 
+
+ Calling 2003 version of pawX11
+
+ ******************************************************
+ *                                                    *
+ *            W E L C O M E    to   P A W             *
+ *                                                    *
+ *       Version 2.14/04      12 January 2004         *
+ *                                                    *
+ ******************************************************
+ Version 1.29/03 of HIGZ started
+ *** Using default PAWLOGON file "/home2/chatuu/.pawlogon.kumac"
+
+ Macro search order is Command
+ Macro search path: .,/home2/chatuu/kumacs
+ Exiting from PAW.
+
+|================================================================|
+|==      Starting analysis plotting script: makeplots.sh       ==|
+|----------                                            ----------|
+
+
+--------------------------------
+ Cleaning plot directories
+ Plot directories are clean!!
+--------------------------------
+ 
+
+|=====================================================|
+|===                                               ===|
+|===  Beginning calculation of the J/Psi Signal    ===|
+|===                                               ===|
+|=====================================================|
+
+
+ Calling 2003 version of pawX11
+
+ ******************************************************
+ *                                                    *
+ *            W E L C O M E    to   P A W             *
+ *                                                    *
+ *       Version 2.14/04      12 January 2004         *
+ *                                                    *
+ ******************************************************
+ Version 1.29/03 of HIGZ started
+ *** Using default PAWLOGON file "/home2/chatuu/.pawlogon.kumac"
+
+ Macro search order is Command
+ Macro search path: .,/home2/chatuu/kumacs
+  MINUIT RELEASE 96.03  INITIALIZED.   DIMENSIONS 100/ 50  EPSMAC=  0.89E-15
+ **********
+ **    1 **SET EPS  0.1000E-06
+ **********
+ FLOATING-POINT NUMBERS ASSUMED ACCURATE TO   0.100E-06
+ **********
+ **    2 **SET ERR   1.000    
+ **********
+ ***** ERROR in HFITH : Empty histogram : ID=    1931 
+ ***** ERROR in HFITH : Empty histogram : ID=    1947 
+ ***** ERROR in HFITH : Empty histogram : ID=    1939 
+ ***** ERROR in HFITH : Empty histogram : ID=    1955 
+ ***** ERROR in HFITH : Empty histogram : ID=    3435 
+ ***** ERROR in HFITH : Empty histogram : ID=    3451 
+ ***** ERROR in HFITH : Empty histogram : ID=    3443 
+ ***** ERROR in HFITH : Empty histogram : ID=    3459 
+ Exiting from PAW.
+  
+  Done calculating signal
+  
+
+ Calling 2003 version of pawX11
+
+ ******************************************************
+ *                                                    *
+ *            W E L C O M E    to   P A W             *
+ *                                                    *
+ *       Version 2.14/04      12 January 2004         *
+ *                                                    *
+ ******************************************************
+ Version 1.29/03 of HIGZ started
+ *** Using default PAWLOGON file "/home2/chatuu/.pawlogon.kumac"
+
+ Macro search order is Command
+ Macro search path: .,/home2/chatuu/kumacs
+  MINUIT RELEASE 96.03  INITIALIZED.   DIMENSIONS 100/ 50  EPSMAC=  0.89E-15
+ **********
+ **    1 **SET EPS  0.1000E-06
+ **********
+ FLOATING-POINT NUMBERS ASSUMED ACCURATE TO   0.100E-06
+ **********
+ **    2 **SET ERR   1.000    
+ **********
+ ***** ERROR in HFITH : Empty histogram : ID=    1931 
+ ***** ERROR in HFITH : Empty histogram : ID=    1947 
+ ***** ERROR in HFITH : Empty histogram : ID=    1939 
+ ***** ERROR in HFITH : Empty histogram : ID=    1955 
+ ***** ERROR in HFITH : Empty histogram : ID=    3435 
+ ***** ERROR in HFITH : Empty histogram : ID=    3451 
+ ***** ERROR in HFITH : Empty histogram : ID=    3443 
+ ***** ERROR in HFITH : Empty histogram : ID=    3459 
+ Exiting from PAW.
+
+|------------------------------------|
+|--                                --|
+|-- Finished with J/Psi sig. calc. --|
+|--                                --|
+|------------------------------------|
+
+
+|------------------------------------------------------|
+|------------------------------------------------------|
+ Running PAW:
+
+ Calling 2003 version of pawX11
+
+ ******************************************************
+ *                                                    *
+ *            W E L C O M E    to   P A W             *
+ *                                                    *
+ *       Version 2.14/04      12 January 2004         *
+ *                                                    *
+ ******************************************************
+ Version 1.29/03 of HIGZ started
+ *** Using default PAWLOGON file "/home2/chatuu/.pawlogon.kumac"
+
+ Macro search order is Command
+ Macro search path: .,/home2/chatuu/kumacs
+ Done with section: dc/
+ Done with section: other/
+ Done with section: coil/
+ Done with section: upstr/
+ Done with topology: plots/numucc/
+ ------------------------
+ Done with section: dc/
+ Done with section: other/
+ Done with section: coil/
+ Done with section: upstr/
+ Done with topology: plots/osdimu/
+ ------------------------
+ Done with section: dc/
+ Done with section: other/
+ Done with section: coil/
+ Done with section: upstr/
+ Done with topology: plots/lsdimu/
+ ------------------------
+ Done with section: dc/
+ Done with section: other/
+ Done with section: coil/
+ Done with section: upstr/
+ Done with topology: plots/osmux/
+ ------------------------
+ Exiting from PAW.
+|------------------------------------------------------|
+|------------------------------------------------------|
+
+
+|---------------------------|
+|                           |
+|  Converting .eps to .pdf  |
+|                           |
+|---------------------------|
+
+Working top directory: ./plots/numucc (1 of 4)
+Starting folder:  dc
+[1A[K...Folder dc complete! (0 files processed)
+Starting folder:  other
+[1A[K...Folder other complete! (0 files processed)
+Starting folder:  coil
+[1A[K...Folder coil complete! (0 files processed)
+Starting folder:  upstr
+[1A[K...Folder upstr complete! (0 files processed)
+Done with top directory: ./plots/numucc
+----
+Working top directory: ./plots/osdimu (2 of 4)
+Starting folder:  dc
+[1A[KWorking file: (1 of 72) data-fit-100mev.eps
+[1A[KWorking file: (2 of 72) data-fit-150mev.eps
+[1A[KWorking file: (3 of 72) ehcal-mb.eps
+[1A[KWorking file: (4 of 72) ehcal-mnorm.eps
+[1A[KWorking file: (5 of 72) ehcal-msig.eps
+[1A[KWorking file: (6 of 72) ehcal.eps
+[1A[KWorking file: (7 of 72) eneut-mb.eps
+[1A[KWorking file: (8 of 72) eneut-mnorm.eps
+[1A[KWorking file: (9 of 72) eneut-msig.eps
+[1A[KWorking file: (10 of 72) eneut.eps
+[1A[KWorking file: (11 of 72) mass-0.9to5-100mev.eps
+[1A[KWorking file: (12 of 72) mass-0.9to5-150mev.eps
+[1A[KWorking file: (13 of 72) mass-0.9to5-300mev.eps
+[1A[KWorking file: (14 of 72) mass-0.9to5-50mev.eps
+[1A[KWorking file: (15 of 72) mass-0.9to5-75mev.eps
+[1A[KWorking file: (16 of 72) mass-0to5-100mev.eps
+[1A[KWorking file: (17 of 72) mass-0to5-150mev.eps
+[1A[KWorking file: (18 of 72) mass-0to5-300mev.eps
+[1A[KWorking file: (19 of 72) mass-0to7-100mev.eps
+[1A[KWorking file: (20 of 72) mass-0to7-150mev.eps
+[1A[KWorking file: (21 of 72) mass-0to7-75mev.eps
+[1A[KWorking file: (22 of 72) mass-2to4-100mev.eps
+[1A[KWorking file: (23 of 72) mass-2to4-75mev.eps
+[1A[KWorking file: (24 of 72) p-pt-mumu-mb.eps
+[1A[KWorking file: (25 of 72) p-pt-mumu-mnorm.eps
+[1A[KWorking file: (26 of 72) p-pt-mumu-msig.eps
+[1A[KWorking file: (27 of 72) p-pt-mumu.eps
+[1A[KWorking file: (28 of 72) p-pt-muneg-mb.eps
+[1A[KWorking file: (29 of 72) p-pt-muneg-mnorm.eps
+[1A[KWorking file: (30 of 72) p-pt-muneg-msig.eps
+[1A[KWorking file: (31 of 72) p-pt-muneg.eps
+[1A[KWorking file: (32 of 72) p-pt-mupos-mb.eps
+[1A[KWorking file: (33 of 72) p-pt-mupos-mnorm.eps
+[1A[KWorking file: (34 of 72) p-pt-mupos-msig.eps
+[1A[KWorking file: (35 of 72) p-pt-mupos.eps
+[1A[KWorking file: (36 of 72) pasym-mb.eps
+[1A[KWorking file: (37 of 72) pasym-mnorm.eps
+[1A[KWorking file: (38 of 72) pasym-msig.eps
+[1A[KWorking file: (39 of 72) pasym.eps
+[1A[KWorking file: (40 of 72) phi12-mb.eps
+[1A[KWorking file: (41 of 72) phi12-mnorm.eps
+[1A[KWorking file: (42 of 72) phi12-msig.eps
+[1A[KWorking file: (43 of 72) phi12.eps
+[1A[KWorking file: (44 of 72) pneuth-mb.eps
+[1A[KWorking file: (45 of 72) pneuth-mnorm.eps
+[1A[KWorking file: (46 of 72) pneuth-msig.eps
+[1A[KWorking file: (47 of 72) pneuth.eps
+[1A[KWorking file: (48 of 72) ptneuth-mb.eps
+[1A[KWorking file: (49 of 72) ptneuth-mnorm.eps
+[1A[KWorking file: (50 of 72) ptneuth-msig.eps
+[1A[KWorking file: (51 of 72) ptneuth.eps
+[1A[KWorking file: (52 of 72) theta1+2-mb.eps
+[1A[KWorking file: (53 of 72) theta1+2-mnorm.eps
+[1A[KWorking file: (54 of 72) theta1+2-msig.eps
+[1A[KWorking file: (55 of 72) theta1+2.eps
+[1A[KWorking file: (56 of 72) thetamumu-theta12-mb.eps
+[1A[KWorking file: (57 of 72) thetamumu-theta12-mnorm.eps
+[1A[KWorking file: (58 of 72) thetamumu-theta12-msig.eps
+[1A[KWorking file: (59 of 72) thetamumu-theta12.eps
+[1A[KWorking file: (60 of 72) thetaxy.eps
+[1A[KWorking file: (61 of 72) vertex-mb.eps
+[1A[KWorking file: (62 of 72) vertex-mnorm.eps
+[1A[KWorking file: (63 of 72) vertex-msig.eps
+[1A[KWorking file: (64 of 72) vertex.eps
+[1A[KWorking file: (65 of 72) zeta1+2-mb.eps
+[1A[KWorking file: (66 of 72) zeta1+2-mnorm.eps
+[1A[KWorking file: (67 of 72) zeta1+2-msig.eps
+[1A[KWorking file: (68 of 72) zeta1+2.eps
+[1A[KWorking file: (69 of 72) zetamumu-mb.eps
+[1A[KWorking file: (70 of 72) zetamumu-mnorm.eps
+[1A[KWorking file: (71 of 72) zetamumu-msig.eps
+[1A[KWorking file: (72 of 72) zetamumu.eps
+[1A[KWorking file: (1 of 72) data-fit-100mev.eps
+[1A[KWorking file: (2 of 72) data-fit-150mev.eps
+[1A[KWorking file: (3 of 72) ehcal-mb.eps
+[1A[KWorking file: (4 of 72) ehcal-mnorm.eps
+[1A[KWorking file: (5 of 72) ehcal-msig.eps
+[1A[KWorking file: (6 of 72) ehcal.eps
+[1A[KWorking file: (7 of 72) eneut-mb.eps
+[1A[KWorking file: (8 of 72) eneut-mnorm.eps
+[1A[KWorking file: (9 of 72) eneut-msig.eps
+[1A[KWorking file: (10 of 72) eneut.eps
+[1A[KWorking file: (11 of 72) mass-0.9to5-100mev.eps
+[1A[KWorking file: (12 of 72) mass-0.9to5-150mev.eps
+[1A[KWorking file: (13 of 72) mass-0.9to5-300mev.eps
+[1A[KWorking file: (14 of 72) mass-0.9to5-50mev.eps
+[1A[KWorking file: (15 of 72) mass-0.9to5-75mev.eps
+[1A[KWorking file: (16 of 72) mass-0to5-100mev.eps
+[1A[KWorking file: (17 of 72) mass-0to5-150mev.eps
+[1A[KWorking file: (18 of 72) mass-0to5-300mev.eps
+[1A[KWorking file: (19 of 72) mass-0to7-100mev.eps
+[1A[KWorking file: (20 of 72) mass-0to7-150mev.eps
+[1A[KWorking file: (21 of 72) mass-0to7-75mev.eps
+[1A[KWorking file: (22 of 72) mass-2to4-100mev.eps
+[1A[KWorking file: (23 of 72) mass-2to4-75mev.eps
+[1A[KWorking file: (24 of 72) p-pt-mumu-mb.eps
+[1A[KWorking file: (25 of 72) p-pt-mumu-mnorm.eps
+[1A[KWorking file: (26 of 72) p-pt-mumu-msig.eps
+[1A[KWorking file: (27 of 72) p-pt-mumu.eps
+[1A[KWorking file: (28 of 72) p-pt-muneg-mb.eps
+[1A[KWorking file: (29 of 72) p-pt-muneg-mnorm.eps
+[1A[KWorking file: (30 of 72) p-pt-muneg-msig.eps
+[1A[KWorking file: (31 of 72) p-pt-muneg.eps
+[1A[KWorking file: (32 of 72) p-pt-mupos-mb.eps
+[1A[KWorking file: (33 of 72) p-pt-mupos-mnorm.eps
+[1A[KWorking file: (34 of 72) p-pt-mupos-msig.eps
+[1A[KWorking file: (35 of 72) p-pt-mupos.eps
+[1A[KWorking file: (36 of 72) pasym-mb.eps
+[1A[KWorking file: (37 of 72) pasym-mnorm.eps
+[1A[KWorking file: (38 of 72) pasym-msig.eps
+[1A[KWorking file: (39 of 72) pasym.eps
+[1A[KWorking file: (40 of 72) phi12-mb.eps
+[1A[KWorking file: (41 of 72) phi12-mnorm.eps
+[1A[KWorking file: (42 of 72) phi12-msig.eps
+[1A[KWorking file: (43 of 72) phi12.eps
+[1A[KWorking file: (44 of 72) pneuth-mb.eps
+[1A[KWorking file: (45 of 72) pneuth-mnorm.eps
+[1A[KWorking file: (46 of 72) pneuth-msig.eps
+[1A[KWorking file: (47 of 72) pneuth.eps
+[1A[KWorking file: (48 of 72) ptneuth-mb.eps
+[1A[KWorking file: (49 of 72) ptneuth-mnorm.eps
+[1A[KWorking file: (50 of 72) ptneuth-msig.eps
+[1A[KWorking file: (51 of 72) ptneuth.eps
+[1A[KWorking file: (52 of 72) theta1+2-mb.eps
+[1A[KWorking file: (53 of 72) theta1+2-mnorm.eps
+[1A[KWorking file: (54 of 72) theta1+2-msig.eps
+[1A[KWorking file: (55 of 72) theta1+2.eps
+[1A[KWorking file: (56 of 72) thetamumu-theta12-mb.eps
+[1A[KWorking file: (57 of 72) thetamumu-theta12-mnorm.eps
+[1A[KWorking file: (58 of 72) thetamumu-theta12-msig.eps
+[1A[KWorking file: (59 of 72) thetamumu-theta12.eps
+[1A[KWorking file: (60 of 72) thetaxy.eps
+[1A[KWorking file: (61 of 72) vertex-mb.eps
+[1A[KWorking file: (62 of 72) vertex-mnorm.eps
+[1A[KWorking file: (63 of 72) vertex-msig.eps
+[1A[KWorking file: (64 of 72) vertex.eps
+[1A[KWorking file: (65 of 72) zeta1+2-mb.eps
+[1A[KWorking file: (66 of 72) zeta1+2-mnorm.eps
+[1A[KWorking file: (67 of 72) zeta1+2-msig.eps
+[1A[KWorking file: (68 of 72) zeta1+2.eps
+[1A[KWorking file: (69 of 72) zetamumu-mb.eps
+[1A[KWorking file: (70 of 72) zetamumu-mnorm.eps
+[1A[KWorking file: (71 of 72) zetamumu-msig.eps
+[1A[KWorking file: (72 of 72) zetamumu.eps
+[1A[K...Folder dc complete! (72 files processed)
+Starting folder:  other
+[1A[K...Folder other complete! (0 files processed)
+Starting folder:  coil
+[1A[KWorking file: (1 of 72) data-fit-100mev.eps
+[1A[KWorking file: (2 of 72) data-fit-150mev.eps
+[1A[KWorking file: (3 of 72) ehcal-mb.eps
+[1A[KWorking file: (4 of 72) ehcal-mnorm.eps
+[1A[KWorking file: (5 of 72) ehcal-msig.eps
+[1A[KWorking file: (6 of 72) ehcal.eps
+[1A[KWorking file: (7 of 72) eneut-mb.eps
+[1A[KWorking file: (8 of 72) eneut-mnorm.eps
+[1A[KWorking file: (9 of 72) eneut-msig.eps
+[1A[KWorking file: (10 of 72) eneut.eps
+[1A[KWorking file: (11 of 72) mass-0.9to5-100mev.eps
+[1A[KWorking file: (12 of 72) mass-0.9to5-150mev.eps
+[1A[KWorking file: (13 of 72) mass-0.9to5-300mev.eps
+[1A[KWorking file: (14 of 72) mass-0.9to5-50mev.eps
+[1A[KWorking file: (15 of 72) mass-0.9to5-75mev.eps
+[1A[KWorking file: (16 of 72) mass-0to5-100mev.eps
+[1A[KWorking file: (17 of 72) mass-0to5-150mev.eps
+[1A[KWorking file: (18 of 72) mass-0to5-300mev.eps
+[1A[KWorking file: (19 of 72) mass-0to7-100mev.eps
+[1A[KWorking file: (20 of 72) mass-0to7-150mev.eps
+[1A[KWorking file: (21 of 72) mass-0to7-75mev.eps
+[1A[KWorking file: (22 of 72) mass-2to4-100mev.eps
+[1A[KWorking file: (23 of 72) mass-2to4-75mev.eps
+[1A[KWorking file: (24 of 72) p-pt-mumu-mb.eps
+[1A[KWorking file: (25 of 72) p-pt-mumu-mnorm.eps
+[1A[KWorking file: (26 of 72) p-pt-mumu-msig.eps
+[1A[KWorking file: (27 of 72) p-pt-mumu.eps
+[1A[KWorking file: (28 of 72) p-pt-muneg-mb.eps
+[1A[KWorking file: (29 of 72) p-pt-muneg-mnorm.eps
+[1A[KWorking file: (30 of 72) p-pt-muneg-msig.eps
+[1A[KWorking file: (31 of 72) p-pt-muneg.eps
+[1A[KWorking file: (32 of 72) p-pt-mupos-mb.eps
+[1A[KWorking file: (33 of 72) p-pt-mupos-mnorm.eps
+[1A[KWorking file: (34 of 72) p-pt-mupos-msig.eps
+[1A[KWorking file: (35 of 72) p-pt-mupos.eps
+[1A[KWorking file: (36 of 72) pasym-mb.eps
+[1A[KWorking file: (37 of 72) pasym-mnorm.eps
+[1A[KWorking file: (38 of 72) pasym-msig.eps
+[1A[KWorking file: (39 of 72) pasym.eps
+[1A[KWorking file: (40 of 72) phi12-mb.eps
+[1A[KWorking file: (41 of 72) phi12-mnorm.eps
+[1A[KWorking file: (42 of 72) phi12-msig.eps
+[1A[KWorking file: (43 of 72) phi12.eps
+[1A[KWorking file: (44 of 72) pneuth-mb.eps
+[1A[KWorking file: (45 of 72) pneuth-mnorm.eps
+[1A[KWorking file: (46 of 72) pneuth-msig.eps
+[1A[KWorking file: (47 of 72) pneuth.eps
+[1A[KWorking file: (48 of 72) ptneuth-mb.eps
+[1A[KWorking file: (49 of 72) ptneuth-mnorm.eps
+[1A[KWorking file: (50 of 72) ptneuth-msig.eps
+[1A[KWorking file: (51 of 72) ptneuth.eps
+[1A[KWorking file: (52 of 72) theta1+2-mb.eps
+[1A[KWorking file: (53 of 72) theta1+2-mnorm.eps
+[1A[KWorking file: (54 of 72) theta1+2-msig.eps
+[1A[KWorking file: (55 of 72) theta1+2.eps
+[1A[KWorking file: (56 of 72) thetamumu-theta12-mb.eps
+[1A[KWorking file: (57 of 72) thetamumu-theta12-mnorm.eps
+[1A[KWorking file: (58 of 72) thetamumu-theta12-msig.eps
+[1A[KWorking file: (59 of 72) thetamumu-theta12.eps
+[1A[KWorking file: (60 of 72) thetaxy.eps
+[1A[KWorking file: (61 of 72) vertex-mb.eps
+[1A[KWorking file: (62 of 72) vertex-mnorm.eps
+[1A[KWorking file: (63 of 72) vertex-msig.eps
+[1A[KWorking file: (64 of 72) vertex.eps
+[1A[KWorking file: (65 of 72) zeta1+2-mb.eps
+[1A[KWorking file: (66 of 72) zeta1+2-mnorm.eps
+[1A[KWorking file: (67 of 72) zeta1+2-msig.eps
+[1A[KWorking file: (68 of 72) zeta1+2.eps
+[1A[KWorking file: (69 of 72) zetamumu-mb.eps
+[1A[KWorking file: (70 of 72) zetamumu-mnorm.eps
+[1A[KWorking file: (71 of 72) zetamumu-msig.eps
+[1A[KWorking file: (72 of 72) zetamumu.eps
+[1A[KWorking file: (1 of 72) data-fit-100mev.eps
+[1A[KWorking file: (2 of 72) data-fit-150mev.eps
+[1A[KWorking file: (3 of 72) ehcal-mb.eps
+[1A[KWorking file: (4 of 72) ehcal-mnorm.eps
+[1A[KWorking file: (5 of 72) ehcal-msig.eps
+[1A[KWorking file: (6 of 72) ehcal.eps
+[1A[KWorking file: (7 of 72) eneut-mb.eps
+[1A[KWorking file: (8 of 72) eneut-mnorm.eps
+[1A[KWorking file: (9 of 72) eneut-msig.eps
+[1A[KWorking file: (10 of 72) eneut.eps
+[1A[KWorking file: (11 of 72) mass-0.9to5-100mev.eps
+[1A[KWorking file: (12 of 72) mass-0.9to5-150mev.eps
+[1A[KWorking file: (13 of 72) mass-0.9to5-300mev.eps
+[1A[KWorking file: (14 of 72) mass-0.9to5-50mev.eps
+[1A[KWorking file: (15 of 72) mass-0.9to5-75mev.eps
+[1A[KWorking file: (16 of 72) mass-0to5-100mev.eps
+[1A[KWorking file: (17 of 72) mass-0to5-150mev.eps
+[1A[KWorking file: (18 of 72) mass-0to5-300mev.eps
+[1A[KWorking file: (19 of 72) mass-0to7-100mev.eps
+[1A[KWorking file: (20 of 72) mass-0to7-150mev.eps
+[1A[KWorking file: (21 of 72) mass-0to7-75mev.eps
+[1A[KWorking file: (22 of 72) mass-2to4-100mev.eps
+[1A[KWorking file: (23 of 72) mass-2to4-75mev.eps
+[1A[KWorking file: (24 of 72) p-pt-mumu-mb.eps
+[1A[KWorking file: (25 of 72) p-pt-mumu-mnorm.eps
+[1A[KWorking file: (26 of 72) p-pt-mumu-msig.eps
+[1A[KWorking file: (27 of 72) p-pt-mumu.eps
+[1A[KWorking file: (28 of 72) p-pt-muneg-mb.eps
+[1A[KWorking file: (29 of 72) p-pt-muneg-mnorm.eps
+[1A[KWorking file: (30 of 72) p-pt-muneg-msig.eps
+[1A[KWorking file: (31 of 72) p-pt-muneg.eps
+[1A[KWorking file: (32 of 72) p-pt-mupos-mb.eps
+[1A[KWorking file: (33 of 72) p-pt-mupos-mnorm.eps
+[1A[KWorking file: (34 of 72) p-pt-mupos-msig.eps
+[1A[KWorking file: (35 of 72) p-pt-mupos.eps
+[1A[KWorking file: (36 of 72) pasym-mb.eps
+[1A[KWorking file: (37 of 72) pasym-mnorm.eps
+[1A[KWorking file: (38 of 72) pasym-msig.eps
+[1A[KWorking file: (39 of 72) pasym.eps
+[1A[KWorking file: (40 of 72) phi12-mb.eps
+[1A[KWorking file: (41 of 72) phi12-mnorm.eps
+[1A[KWorking file: (42 of 72) phi12-msig.eps
+[1A[KWorking file: (43 of 72) phi12.eps
+[1A[KWorking file: (44 of 72) pneuth-mb.eps
+[1A[KWorking file: (45 of 72) pneuth-mnorm.eps
+[1A[KWorking file: (46 of 72) pneuth-msig.eps
+[1A[KWorking file: (47 of 72) pneuth.eps
+[1A[KWorking file: (48 of 72) ptneuth-mb.eps
+[1A[KWorking file: (49 of 72) ptneuth-mnorm.eps
+[1A[KWorking file: (50 of 72) ptneuth-msig.eps
+[1A[KWorking file: (51 of 72) ptneuth.eps
+[1A[KWorking file: (52 of 72) theta1+2-mb.eps
+[1A[KWorking file: (53 of 72) theta1+2-mnorm.eps
+[1A[KWorking file: (54 of 72) theta1+2-msig.eps
+[1A[KWorking file: (55 of 72) theta1+2.eps
+[1A[KWorking file: (56 of 72) thetamumu-theta12-mb.eps
+[1A[KWorking file: (57 of 72) thetamumu-theta12-mnorm.eps
+[1A[KWorking file: (58 of 72) thetamumu-theta12-msig.eps
+[1A[KWorking file: (59 of 72) thetamumu-theta12.eps
+[1A[KWorking file: (60 of 72) thetaxy.eps
+[1A[KWorking file: (61 of 72) vertex-mb.eps
+[1A[KWorking file: (62 of 72) vertex-mnorm.eps
+[1A[KWorking file: (63 of 72) vertex-msig.eps
+[1A[KWorking file: (64 of 72) vertex.eps
+[1A[KWorking file: (65 of 72) zeta1+2-mb.eps
+[1A[KWorking file: (66 of 72) zeta1+2-mnorm.eps
+[1A[KWorking file: (67 of 72) zeta1+2-msig.eps
+[1A[KWorking file: (68 of 72) zeta1+2.eps
+[1A[KWorking file: (69 of 72) zetamumu-mb.eps
+[1A[KWorking file: (70 of 72) zetamumu-mnorm.eps
+[1A[KWorking file: (71 of 72) zetamumu-msig.eps
+[1A[KWorking file: (72 of 72) zetamumu.eps
+[1A[K...Folder coil complete! (72 files processed)
+Starting folder:  upstr
+[1A[K...Folder upstr complete! (0 files processed)
+Done with top directory: ./plots/osdimu
+----
+Working top directory: ./plots/lsdimu (3 of 4)
+Starting folder:  dc
+[1A[K...Folder dc complete! (0 files processed)
+Starting folder:  other
+[1A[K...Folder other complete! (0 files processed)
+Starting folder:  coil
+[1A[K...Folder coil complete! (0 files processed)
+Starting folder:  upstr
+[1A[K...Folder upstr complete! (0 files processed)
+Done with top directory: ./plots/lsdimu
+----
+Working top directory: ./plots/osmux (4 of 4)
+Starting folder:  dc
+[1A[KWorking file: (1 of 72) data-fit-100mev.eps
+[1A[KWorking file: (2 of 72) data-fit-150mev.eps
+[1A[KWorking file: (3 of 72) ehcal-mb.eps
+[1A[KWorking file: (4 of 72) ehcal-mnorm.eps
+[1A[KWorking file: (5 of 72) ehcal-msig.eps
+[1A[KWorking file: (6 of 72) ehcal.eps
+[1A[KWorking file: (7 of 72) eneut-mb.eps
+[1A[KWorking file: (8 of 72) eneut-mnorm.eps
+[1A[KWorking file: (9 of 72) eneut-msig.eps
+[1A[KWorking file: (10 of 72) eneut.eps
+[1A[KWorking file: (11 of 72) mass-0.9to5-100mev.eps
+[1A[KWorking file: (12 of 72) mass-0.9to5-150mev.eps
+[1A[KWorking file: (13 of 72) mass-0.9to5-300mev.eps
+[1A[KWorking file: (14 of 72) mass-0.9to5-50mev.eps
+[1A[KWorking file: (15 of 72) mass-0.9to5-75mev.eps
+[1A[KWorking file: (16 of 72) mass-0to5-100mev.eps
+[1A[KWorking file: (17 of 72) mass-0to5-150mev.eps
+[1A[KWorking file: (18 of 72) mass-0to5-300mev.eps
+[1A[KWorking file: (19 of 72) mass-0to7-100mev.eps
+[1A[KWorking file: (20 of 72) mass-0to7-150mev.eps
+[1A[KWorking file: (21 of 72) mass-0to7-75mev.eps
+[1A[KWorking file: (22 of 72) mass-2to4-100mev.eps
+[1A[KWorking file: (23 of 72) mass-2to4-75mev.eps
+[1A[KWorking file: (24 of 72) p-pt-mumu-mb.eps
+[1A[KWorking file: (25 of 72) p-pt-mumu-mnorm.eps
+[1A[KWorking file: (26 of 72) p-pt-mumu-msig.eps
+[1A[KWorking file: (27 of 72) p-pt-mumu.eps
+[1A[KWorking file: (28 of 72) p-pt-muneg-mb.eps
+[1A[KWorking file: (29 of 72) p-pt-muneg-mnorm.eps
+[1A[KWorking file: (30 of 72) p-pt-muneg-msig.eps
+[1A[KWorking file: (31 of 72) p-pt-muneg.eps
+[1A[KWorking file: (32 of 72) p-pt-mupos-mb.eps
+[1A[KWorking file: (33 of 72) p-pt-mupos-mnorm.eps
+[1A[KWorking file: (34 of 72) p-pt-mupos-msig.eps
+[1A[KWorking file: (35 of 72) p-pt-mupos.eps
+[1A[KWorking file: (36 of 72) pasym-mb.eps
+[1A[KWorking file: (37 of 72) pasym-mnorm.eps
+[1A[KWorking file: (38 of 72) pasym-msig.eps
+[1A[KWorking file: (39 of 72) pasym.eps
+[1A[KWorking file: (40 of 72) phi12-mb.eps
+[1A[KWorking file: (41 of 72) phi12-mnorm.eps
+[1A[KWorking file: (42 of 72) phi12-msig.eps
+[1A[KWorking file: (43 of 72) phi12.eps
+[1A[KWorking file: (44 of 72) pneuth-mb.eps
+[1A[KWorking file: (45 of 72) pneuth-mnorm.eps
+[1A[KWorking file: (46 of 72) pneuth-msig.eps
+[1A[KWorking file: (47 of 72) pneuth.eps
+[1A[KWorking file: (48 of 72) ptneuth-mb.eps
+[1A[KWorking file: (49 of 72) ptneuth-mnorm.eps
+[1A[KWorking file: (50 of 72) ptneuth-msig.eps
+[1A[KWorking file: (51 of 72) ptneuth.eps
+[1A[KWorking file: (52 of 72) theta1+2-mb.eps
+[1A[KWorking file: (53 of 72) theta1+2-mnorm.eps
+[1A[KWorking file: (54 of 72) theta1+2-msig.eps
+[1A[KWorking file: (55 of 72) theta1+2.eps
+[1A[KWorking file: (56 of 72) thetamumu-theta12-mb.eps
+[1A[KWorking file: (57 of 72) thetamumu-theta12-mnorm.eps
+[1A[KWorking file: (58 of 72) thetamumu-theta12-msig.eps
+[1A[KWorking file: (59 of 72) thetamumu-theta12.eps
+[1A[KWorking file: (60 of 72) thetaxy.eps
+[1A[KWorking file: (61 of 72) vertex-mb.eps
+[1A[KWorking file: (62 of 72) vertex-mnorm.eps
+[1A[KWorking file: (63 of 72) vertex-msig.eps
+[1A[KWorking file: (64 of 72) vertex.eps
+[1A[KWorking file: (65 of 72) zeta1+2-mb.eps
+[1A[KWorking file: (66 of 72) zeta1+2-mnorm.eps
+[1A[KWorking file: (67 of 72) zeta1+2-msig.eps
+[1A[KWorking file: (68 of 72) zeta1+2.eps
+[1A[KWorking file: (69 of 72) zetamumu-mb.eps
+[1A[KWorking file: (70 of 72) zetamumu-mnorm.eps
+[1A[KWorking file: (71 of 72) zetamumu-msig.eps
+[1A[KWorking file: (72 of 72) zetamumu.eps
+[1A[KWorking file: (1 of 72) data-fit-100mev.eps
+[1A[KWorking file: (2 of 72) data-fit-150mev.eps
+[1A[KWorking file: (3 of 72) ehcal-mb.eps
+[1A[KWorking file: (4 of 72) ehcal-mnorm.eps
+[1A[KWorking file: (5 of 72) ehcal-msig.eps
+[1A[KWorking file: (6 of 72) ehcal.eps
+[1A[KWorking file: (7 of 72) eneut-mb.eps
+[1A[KWorking file: (8 of 72) eneut-mnorm.eps
+[1A[KWorking file: (9 of 72) eneut-msig.eps
+[1A[KWorking file: (10 of 72) eneut.eps
+[1A[KWorking file: (11 of 72) mass-0.9to5-100mev.eps
+[1A[KWorking file: (12 of 72) mass-0.9to5-150mev.eps
+[1A[KWorking file: (13 of 72) mass-0.9to5-300mev.eps
+[1A[KWorking file: (14 of 72) mass-0.9to5-50mev.eps
+[1A[KWorking file: (15 of 72) mass-0.9to5-75mev.eps
+[1A[KWorking file: (16 of 72) mass-0to5-100mev.eps
+[1A[KWorking file: (17 of 72) mass-0to5-150mev.eps
+[1A[KWorking file: (18 of 72) mass-0to5-300mev.eps
+[1A[KWorking file: (19 of 72) mass-0to7-100mev.eps
+[1A[KWorking file: (20 of 72) mass-0to7-150mev.eps
+[1A[KWorking file: (21 of 72) mass-0to7-75mev.eps
+[1A[KWorking file: (22 of 72) mass-2to4-100mev.eps
+[1A[KWorking file: (23 of 72) mass-2to4-75mev.eps
+[1A[KWorking file: (24 of 72) p-pt-mumu-mb.eps
+[1A[KWorking file: (25 of 72) p-pt-mumu-mnorm.eps
+[1A[KWorking file: (26 of 72) p-pt-mumu-msig.eps
+[1A[KWorking file: (27 of 72) p-pt-mumu.eps
+[1A[KWorking file: (28 of 72) p-pt-muneg-mb.eps
+[1A[KWorking file: (29 of 72) p-pt-muneg-mnorm.eps
+[1A[KWorking file: (30 of 72) p-pt-muneg-msig.eps
+[1A[KWorking file: (31 of 72) p-pt-muneg.eps
+[1A[KWorking file: (32 of 72) p-pt-mupos-mb.eps
+[1A[KWorking file: (33 of 72) p-pt-mupos-mnorm.eps
+[1A[KWorking file: (34 of 72) p-pt-mupos-msig.eps
+[1A[KWorking file: (35 of 72) p-pt-mupos.eps
+[1A[KWorking file: (36 of 72) pasym-mb.eps
+[1A[KWorking file: (37 of 72) pasym-mnorm.eps
+[1A[KWorking file: (38 of 72) pasym-msig.eps
+[1A[KWorking file: (39 of 72) pasym.eps
+[1A[KWorking file: (40 of 72) phi12-mb.eps
+[1A[KWorking file: (41 of 72) phi12-mnorm.eps
+[1A[KWorking file: (42 of 72) phi12-msig.eps
+[1A[KWorking file: (43 of 72) phi12.eps
+[1A[KWorking file: (44 of 72) pneuth-mb.eps
+[1A[KWorking file: (45 of 72) pneuth-mnorm.eps
+[1A[KWorking file: (46 of 72) pneuth-msig.eps
+[1A[KWorking file: (47 of 72) pneuth.eps
+[1A[KWorking file: (48 of 72) ptneuth-mb.eps
+[1A[KWorking file: (49 of 72) ptneuth-mnorm.eps
+[1A[KWorking file: (50 of 72) ptneuth-msig.eps
+[1A[KWorking file: (51 of 72) ptneuth.eps
+[1A[KWorking file: (52 of 72) theta1+2-mb.eps
+[1A[KWorking file: (53 of 72) theta1+2-mnorm.eps
+[1A[KWorking file: (54 of 72) theta1+2-msig.eps
+[1A[KWorking file: (55 of 72) theta1+2.eps
+[1A[KWorking file: (56 of 72) thetamumu-theta12-mb.eps
+[1A[KWorking file: (57 of 72) thetamumu-theta12-mnorm.eps
+[1A[KWorking file: (58 of 72) thetamumu-theta12-msig.eps
+[1A[KWorking file: (59 of 72) thetamumu-theta12.eps
+[1A[KWorking file: (60 of 72) thetaxy.eps
+[1A[KWorking file: (61 of 72) vertex-mb.eps
+[1A[KWorking file: (62 of 72) vertex-mnorm.eps
+[1A[KWorking file: (63 of 72) vertex-msig.eps
+[1A[KWorking file: (64 of 72) vertex.eps
+[1A[KWorking file: (65 of 72) zeta1+2-mb.eps
+[1A[KWorking file: (66 of 72) zeta1+2-mnorm.eps
+[1A[KWorking file: (67 of 72) zeta1+2-msig.eps
+[1A[KWorking file: (68 of 72) zeta1+2.eps
+[1A[KWorking file: (69 of 72) zetamumu-mb.eps
+[1A[KWorking file: (70 of 72) zetamumu-mnorm.eps
+[1A[KWorking file: (71 of 72) zetamumu-msig.eps
+[1A[KWorking file: (72 of 72) zetamumu.eps
+[1A[K...Folder dc complete! (72 files processed)
+Starting folder:  other
+[1A[K...Folder other complete! (0 files processed)
+Starting folder:  coil
+[1A[KWorking file: (1 of 72) data-fit-100mev.eps
+[1A[KWorking file: (2 of 72) data-fit-150mev.eps
+[1A[KWorking file: (3 of 72) ehcal-mb.eps
+[1A[KWorking file: (4 of 72) ehcal-mnorm.eps
+[1A[KWorking file: (5 of 72) ehcal-msig.eps
+[1A[KWorking file: (6 of 72) ehcal.eps
+[1A[KWorking file: (7 of 72) eneut-mb.eps
+[1A[KWorking file: (8 of 72) eneut-mnorm.eps
+[1A[KWorking file: (9 of 72) eneut-msig.eps
+[1A[KWorking file: (10 of 72) eneut.eps
+[1A[KWorking file: (11 of 72) mass-0.9to5-100mev.eps
+[1A[KWorking file: (12 of 72) mass-0.9to5-150mev.eps
+[1A[KWorking file: (13 of 72) mass-0.9to5-300mev.eps
+[1A[KWorking file: (14 of 72) mass-0.9to5-50mev.eps
+[1A[KWorking file: (15 of 72) mass-0.9to5-75mev.eps
+[1A[KWorking file: (16 of 72) mass-0to5-100mev.eps
+[1A[KWorking file: (17 of 72) mass-0to5-150mev.eps
+[1A[KWorking file: (18 of 72) mass-0to5-300mev.eps
+[1A[KWorking file: (19 of 72) mass-0to7-100mev.eps
+[1A[KWorking file: (20 of 72) mass-0to7-150mev.eps
+[1A[KWorking file: (21 of 72) mass-0to7-75mev.eps
+[1A[KWorking file: (22 of 72) mass-2to4-100mev.eps
+[1A[KWorking file: (23 of 72) mass-2to4-75mev.eps
+[1A[KWorking file: (24 of 72) p-pt-mumu-mb.eps
+[1A[KWorking file: (25 of 72) p-pt-mumu-mnorm.eps
+[1A[KWorking file: (26 of 72) p-pt-mumu-msig.eps
+[1A[KWorking file: (27 of 72) p-pt-mumu.eps
+[1A[KWorking file: (28 of 72) p-pt-muneg-mb.eps
+[1A[KWorking file: (29 of 72) p-pt-muneg-mnorm.eps
+[1A[KWorking file: (30 of 72) p-pt-muneg-msig.eps
+[1A[KWorking file: (31 of 72) p-pt-muneg.eps
+[1A[KWorking file: (32 of 72) p-pt-mupos-mb.eps
+[1A[KWorking file: (33 of 72) p-pt-mupos-mnorm.eps
+[1A[KWorking file: (34 of 72) p-pt-mupos-msig.eps
+[1A[KWorking file: (35 of 72) p-pt-mupos.eps
+[1A[KWorking file: (36 of 72) pasym-mb.eps
+[1A[KWorking file: (37 of 72) pasym-mnorm.eps
+[1A[KWorking file: (38 of 72) pasym-msig.eps
+[1A[KWorking file: (39 of 72) pasym.eps
+[1A[KWorking file: (40 of 72) phi12-mb.eps
+[1A[KWorking file: (41 of 72) phi12-mnorm.eps
+[1A[KWorking file: (42 of 72) phi12-msig.eps
+[1A[KWorking file: (43 of 72) phi12.eps
+[1A[KWorking file: (44 of 72) pneuth-mb.eps
+[1A[KWorking file: (45 of 72) pneuth-mnorm.eps
+[1A[KWorking file: (46 of 72) pneuth-msig.eps
+[1A[KWorking file: (47 of 72) pneuth.eps
+[1A[KWorking file: (48 of 72) ptneuth-mb.eps
+[1A[KWorking file: (49 of 72) ptneuth-mnorm.eps
+[1A[KWorking file: (50 of 72) ptneuth-msig.eps
+[1A[KWorking file: (51 of 72) ptneuth.eps
+[1A[KWorking file: (52 of 72) theta1+2-mb.eps
+[1A[KWorking file: (53 of 72) theta1+2-mnorm.eps
+[1A[KWorking file: (54 of 72) theta1+2-msig.eps
+[1A[KWorking file: (55 of 72) theta1+2.eps
+[1A[KWorking file: (56 of 72) thetamumu-theta12-mb.eps
+[1A[KWorking file: (57 of 72) thetamumu-theta12-mnorm.eps
+[1A[KWorking file: (58 of 72) thetamumu-theta12-msig.eps
+[1A[KWorking file: (59 of 72) thetamumu-theta12.eps
+[1A[KWorking file: (60 of 72) thetaxy.eps
+[1A[KWorking file: (61 of 72) vertex-mb.eps
+[1A[KWorking file: (62 of 72) vertex-mnorm.eps
+[1A[KWorking file: (63 of 72) vertex-msig.eps
+[1A[KWorking file: (64 of 72) vertex.eps
+[1A[KWorking file: (65 of 72) zeta1+2-mb.eps
+[1A[KWorking file: (66 of 72) zeta1+2-mnorm.eps
+[1A[KWorking file: (67 of 72) zeta1+2-msig.eps
+[1A[KWorking file: (68 of 72) zeta1+2.eps
+[1A[KWorking file: (69 of 72) zetamumu-mb.eps
+[1A[KWorking file: (70 of 72) zetamumu-mnorm.eps
+[1A[KWorking file: (71 of 72) zetamumu-msig.eps
+[1A[KWorking file: (72 of 72) zetamumu.eps
+[1A[KWorking file: (1 of 72) data-fit-100mev.eps
+[1A[KWorking file: (2 of 72) data-fit-150mev.eps
+[1A[KWorking file: (3 of 72) ehcal-mb.eps
+[1A[KWorking file: (4 of 72) ehcal-mnorm.eps
+[1A[KWorking file: (5 of 72) ehcal-msig.eps
+[1A[KWorking file: (6 of 72) ehcal.eps
+[1A[KWorking file: (7 of 72) eneut-mb.eps
+[1A[KWorking file: (8 of 72) eneut-mnorm.eps
+[1A[KWorking file: (9 of 72) eneut-msig.eps
+[1A[KWorking file: (10 of 72) eneut.eps
+[1A[KWorking file: (11 of 72) mass-0.9to5-100mev.eps
+[1A[KWorking file: (12 of 72) mass-0.9to5-150mev.eps
+[1A[KWorking file: (13 of 72) mass-0.9to5-300mev.eps
+[1A[KWorking file: (14 of 72) mass-0.9to5-50mev.eps
+[1A[KWorking file: (15 of 72) mass-0.9to5-75mev.eps
+[1A[KWorking file: (16 of 72) mass-0to5-100mev.eps
+[1A[KWorking file: (17 of 72) mass-0to5-150mev.eps
+[1A[KWorking file: (18 of 72) mass-0to5-300mev.eps
+[1A[KWorking file: (19 of 72) mass-0to7-100mev.eps
+[1A[KWorking file: (20 of 72) mass-0to7-150mev.eps
+[1A[KWorking file: (21 of 72) mass-0to7-75mev.eps
+[1A[KWorking file: (22 of 72) mass-2to4-100mev.eps
+[1A[KWorking file: (23 of 72) mass-2to4-75mev.eps
+[1A[KWorking file: (24 of 72) p-pt-mumu-mb.eps
+[1A[KWorking file: (25 of 72) p-pt-mumu-mnorm.eps
+[1A[KWorking file: (26 of 72) p-pt-mumu-msig.eps
+[1A[KWorking file: (27 of 72) p-pt-mumu.eps
+[1A[KWorking file: (28 of 72) p-pt-muneg-mb.eps
+[1A[KWorking file: (29 of 72) p-pt-muneg-mnorm.eps
+[1A[KWorking file: (30 of 72) p-pt-muneg-msig.eps
+[1A[KWorking file: (31 of 72) p-pt-muneg.eps
+[1A[KWorking file: (32 of 72) p-pt-mupos-mb.eps
+[1A[KWorking file: (33 of 72) p-pt-mupos-mnorm.eps
+[1A[KWorking file: (34 of 72) p-pt-mupos-msig.eps
+[1A[KWorking file: (35 of 72) p-pt-mupos.eps
+[1A[KWorking file: (36 of 72) pasym-mb.eps
+[1A[KWorking file: (37 of 72) pasym-mnorm.eps
+[1A[KWorking file: (38 of 72) pasym-msig.eps
+[1A[KWorking file: (39 of 72) pasym.eps
+[1A[KWorking file: (40 of 72) phi12-mb.eps
+[1A[KWorking file: (41 of 72) phi12-mnorm.eps
+[1A[KWorking file: (42 of 72) phi12-msig.eps
+[1A[KWorking file: (43 of 72) phi12.eps
+[1A[KWorking file: (44 of 72) pneuth-mb.eps
+[1A[KWorking file: (45 of 72) pneuth-mnorm.eps
+[1A[KWorking file: (46 of 72) pneuth-msig.eps
+[1A[KWorking file: (47 of 72) pneuth.eps
+[1A[KWorking file: (48 of 72) ptneuth-mb.eps
+[1A[KWorking file: (49 of 72) ptneuth-mnorm.eps
+[1A[KWorking file: (50 of 72) ptneuth-msig.eps
+[1A[KWorking file: (51 of 72) ptneuth.eps
+[1A[KWorking file: (52 of 72) theta1+2-mb.eps
+[1A[KWorking file: (53 of 72) theta1+2-mnorm.eps
+[1A[KWorking file: (54 of 72) theta1+2-msig.eps
+[1A[KWorking file: (55 of 72) theta1+2.eps
+[1A[KWorking file: (56 of 72) thetamumu-theta12-mb.eps
+[1A[KWorking file: (57 of 72) thetamumu-theta12-mnorm.eps
+[1A[KWorking file: (58 of 72) thetamumu-theta12-msig.eps
+[1A[KWorking file: (59 of 72) thetamumu-theta12.eps
+[1A[KWorking file: (60 of 72) thetaxy.eps
+[1A[KWorking file: (61 of 72) vertex-mb.eps
+[1A[KWorking file: (62 of 72) vertex-mnorm.eps
+[1A[KWorking file: (63 of 72) vertex-msig.eps
+[1A[KWorking file: (64 of 72) vertex.eps
+[1A[KWorking file: (65 of 72) zeta1+2-mb.eps
+[1A[KWorking file: (66 of 72) zeta1+2-mnorm.eps
+[1A[KWorking file: (67 of 72) zeta1+2-msig.eps
+[1A[KWorking file: (68 of 72) zeta1+2.eps
+[1A[KWorking file: (69 of 72) zetamumu-mb.eps
+[1A[KWorking file: (70 of 72) zetamumu-mnorm.eps
+[1A[KWorking file: (71 of 72) zetamumu-msig.eps
+[1A[KWorking file: (72 of 72) zetamumu.eps
+[1A[K...Folder coil complete! (72 files processed)
+Starting folder:  upstr
+[1A[K...Folder upstr complete! (0 files processed)
+Done with top directory: ./plots/osmux
+----
+ 
+|----------                                            ----------|
+|                    Analysis plots created!                     |
+|================================================================|
+
+g77 -g   -c -o main.o main.F
+rm -f main
+g77 -g -o main main.o \
+ \
+ -L/data/gonzo3/cern/pro/lib `cernlib pawlib graflib packlib mathlib kernlib`
+ 
+ |=================================================|
+ |=== Working extra cut type: allev             ===|
+ |=== Finished extra cut type: allev            ===|
+ |=================================================|
+ 
+ 
+ |=================================================|
+ |=== Working extra cut type: m-sig             ===|
+ |=== Finished extra cut type: m-sig            ===|
+ |=================================================|
+ 
+ 
+ |=================================================|
+ |=== Working extra cut type: mblnd             ===|
+ |=== Finished extra cut type: mblnd            ===|
+ |=================================================|
+ 
+ 
+ |=================================================|
+ |=== Working extra cut type: mnorm             ===|
+ |=== Finished extra cut type: mnorm            ===|
+ |=================================================|
+ 
+ 
+ ***** Job Done *****
+ 
+
+|===============================================|
+|===============================================|
+|                                               |
+|        Beginning .tex creation.               |
+|                                               |
+|===============================================|
+
+|=============================|
+|   Cleaning .tex output.     |
+|=============================|
+
+ Tex output clean!
+-----------------------
+
+|-----------------------------------------------|
+|  Working top directory: ./numucc/ (1 of 4)
+|    Beginning folder: ./numucc/dc/
+[1A[K| ...Folder ncand2 complete!
+[1A[K| ...Folder ncand3 complete!
+[1A[K| ...Folder ncand4 complete!
+[1A[K| ...Folder ncand34 complete!
+[1A[K| ...Folder dc complete!
+|    Beginning folder: ./numucc/other/
+[1A[K| ...Folder ncand2 complete!
+[1A[K| ...Folder ncand3 complete!
+[1A[K| ...Folder ncand4 complete!
+[1A[K| ...Folder ncand34 complete!
+[1A[K| ...Folder other complete!
+|    Beginning folder: ./numucc/coil/
+[1A[K| ...Folder ncand2 complete!
+[1A[K| ...Folder ncand3 complete!
+[1A[K| ...Folder ncand4 complete!
+[1A[K| ...Folder ncand34 complete!
+[1A[K| ...Folder coil complete!
+|    Beginning folder: ./numucc/upstr/
+[1A[K| ...Folder ncand2 complete!
+[1A[K| ...Folder ncand3 complete!
+[1A[K| ...Folder ncand4 complete!
+[1A[K| ...Folder ncand34 complete!
+[1A[K| ...Folder upstr complete!
+|    Done with top directory: ./numucc/
+|-----------------------------------------------|
+|  Working top directory: ./osdimu/ (2 of 4)
+|    Beginning folder: ./osdimu/dc/
+[1A[K| ...Folder ncand2 complete!
+[1A[K| ...Folder ncand3 complete!
+[1A[K| ...Folder ncand4 complete!
+[1A[K| ...Folder ncand34 complete!
+[1A[K| ...Folder dc complete!
+|    Beginning folder: ./osdimu/other/
+[1A[K| ...Folder ncand2 complete!
+[1A[K| ...Folder ncand3 complete!
+[1A[K| ...Folder ncand4 complete!
+[1A[K| ...Folder ncand34 complete!
+[1A[K| ...Folder other complete!
+|    Beginning folder: ./osdimu/coil/
+[1A[K| ...Folder ncand2 complete!
+[1A[K| ...Folder ncand3 complete!
+[1A[K| ...Folder ncand4 complete!
+[1A[K| ...Folder ncand34 complete!
+[1A[K| ...Folder coil complete!
+|    Beginning folder: ./osdimu/upstr/
+[1A[K| ...Folder ncand2 complete!
+[1A[K| ...Folder ncand3 complete!
+[1A[K| ...Folder ncand4 complete!
+[1A[K| ...Folder ncand34 complete!
+[1A[K| ...Folder upstr complete!
+|    Done with top directory: ./osdimu/
+|-----------------------------------------------|
+|  Working top directory: ./lsdimu/ (3 of 4)
+|    Beginning folder: ./lsdimu/dc/
+[1A[K| ...Folder ncand2 complete!
+[1A[K| ...Folder ncand3 complete!
+[1A[K| ...Folder ncand4 complete!
+[1A[K| ...Folder ncand34 complete!
+[1A[K| ...Folder dc complete!
+|    Beginning folder: ./lsdimu/other/
+[1A[K| ...Folder ncand2 complete!
+[1A[K| ...Folder ncand3 complete!
+[1A[K| ...Folder ncand4 complete!
+[1A[K| ...Folder ncand34 complete!
+[1A[K| ...Folder other complete!
+|    Beginning folder: ./lsdimu/coil/
+[1A[K| ...Folder ncand2 complete!
+[1A[K| ...Folder ncand3 complete!
+[1A[K| ...Folder ncand4 complete!
+[1A[K| ...Folder ncand34 complete!
+[1A[K| ...Folder coil complete!
+|    Beginning folder: ./lsdimu/upstr/
+[1A[K| ...Folder ncand2 complete!
+[1A[K| ...Folder ncand3 complete!
+[1A[K| ...Folder ncand4 complete!
+[1A[K| ...Folder ncand34 complete!
+[1A[K| ...Folder upstr complete!
+|    Done with top directory: ./lsdimu/
+|-----------------------------------------------|
+|  Working top directory: ./osmux/ (4 of 4)
+|    Beginning folder: ./osmux/dc/
+[1A[K| ...Folder ncand2 complete!
+[1A[K| ...Folder ncand3 complete!
+[1A[K| ...Folder ncand4 complete!
+[1A[K| ...Folder ncand34 complete!
+[1A[K| ...Folder dc complete!
+|    Beginning folder: ./osmux/other/
+[1A[K| ...Folder ncand2 complete!
+[1A[K| ...Folder ncand3 complete!
+[1A[K| ...Folder ncand4 complete!
+[1A[K| ...Folder ncand34 complete!
+[1A[K| ...Folder other complete!
+|    Beginning folder: ./osmux/coil/
+[1A[K| ...Folder ncand2 complete!
+[1A[K| ...Folder ncand3 complete!
+[1A[K| ...Folder ncand4 complete!
+[1A[K| ...Folder ncand34 complete!
+[1A[K| ...Folder coil complete!
+|    Beginning folder: ./osmux/upstr/
+[1A[K| ...Folder ncand2 complete!
+[1A[K| ...Folder ncand3 complete!
+[1A[K| ...Folder ncand4 complete!
+[1A[K| ...Folder ncand34 complete!
+[1A[K| ...Folder upstr complete!
+|    Done with top directory: ./osmux/
+|-----------------------------------------------|
+|===============================================|
+|                                               |
+|          Finished .tex production.            |
+|                                               |
+|===============================================|
+|===============================================|
+

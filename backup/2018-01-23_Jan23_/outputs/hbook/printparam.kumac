@@ -1,0 +1,7 @@
+macro printparam histid 
+
+* This kumac outputs the parameters associated with 
+* the given histogram ID.
+
+exec getid [histid] 0 0 0 0 0 0
+

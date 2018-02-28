@@ -1,0 +1,154 @@
+ User Settings:
+ 
+nmc (# of MC components):                  15
+fullnts (full (1) or baby (0) ntuples):     0
+maxevts (# of events to process (0=all)):   0
+usents (# of ntuples to process (0=all)):   0
+nvar (# of variables plotted):             47
+ncuts (# of cuts exacted):                 29
+                      usecorr2D:            0
+                      usecorrMass:          0
+                      usecorrZeta:          0
+                      formRenorm:           0
+                      iCorr:                1
+ -------------------------------------------------
+ runtypes (1=run, 0=skip):
+runtype( 0):  1
+runtype( 1):  1
+runtype( 2):  1
+runtype( 3):  1
+runtype( 4):  1
+runtype( 5):  1
+runtype( 6):  1
+runtype( 7):  1
+runtype( 8):  1
+runtype( 9):  1
+runtype(10):  1
+runtype(11):  1
+runtype(12):  1
+runtype(13):  1
+runtype(14):  1
+runtype(15):  1
+ -------------------------------------------------
+ Datacards used:
+datacard( 0, 0) : datacard/datacoil   
+datacard( 1, 0) : datacard/ccbabygen  
+datacard( 2, 0) : datacard/ncbabygen  
+datacard( 3, 0) : datacard/jpsi-mumu  
+datacard( 4, 0) : datacard/obgbaby    
+datacard( 5, 0) : datacard/cohpipgen  
+datacard( 6, 0) : datacard/cohrhop    
+datacard( 7, 0) : datacard/amccbabygen
+datacard( 8, 0) : datacard/qeccbabygen
+datacard( 9, 0) : datacard/cohpi0nuabk
+datacard(10, 0) : datacard/neccbabygen
+datacard(11, 0) : datacard/aneccgen   
+datacard(12, 0) : datacard/anmncgen   
+datacard(13, 0) : datacard/cohrho0    
+datacard(14, 0) : datacard/resbabygen 
+datacard(15, 0) : datacard/cohphi0    
+ -------------------------------------------------
+ MC types used (1=Nuage, 2=Neglib, 3=Genie):      
+               ( 4-7 are permutations)            
+gtyp( 0):  3
+gtyp( 1):  3
+gtyp( 2):  3
+gtyp( 3):  3
+gtyp( 4):  3
+gtyp( 5):  3
+gtyp( 6):  3
+gtyp( 7):  3
+gtyp( 8):  3
+gtyp( 9):  3
+gtyp(10):  3
+gtyp(11):  3
+gtyp(12):  3
+gtyp(13):  3
+gtyp(14):  3
+gtyp(15):  3
+ -------------------------------------------------
+ Generated number of MC events in ntuples:        
+gennt( 1):   4116629.00
+gennt( 2):   2451852.25
+gennt( 3):    337363.34
+gennt( 4):         1.00
+gennt( 5):    824186.44
+gennt( 6):    147680.42
+gennt( 7):    384881.81
+gennt( 8):    418257.53
+gennt( 9):    179844.78
+gennt(10):    396271.91
+gennt(11):    193616.45
+gennt(12):    189598.92
+gennt(13):     25235.83
+gennt(14):    934139.81
+gennt(15):      4075.93
+ -------------------------------------------------
+ Normalizations used (norm0 then normTot):
+norm(*, 0):   1.000000   1.000000
+norm(*, 1):   0.349801   0.349801
+norm(*, 2):   0.223178   0.223178
+norm(*, 3):   0.000088   0.000088
+norm(*, 4):   1.000000   0.220000
+norm(*, 5):   0.012133   0.011951
+norm(*, 6):   0.049973   0.033432
+norm(*, 7):   0.093535   0.093535
+norm(*, 8):   0.076508   0.076508
+norm(*, 9):   0.027802   0.027385
+norm(*,10):   0.054508   0.054508
+norm(*,11):   0.011156   0.011156
+norm(*,12):   0.072152   0.072152
+norm(*,13):   0.039626   0.026510
+norm(*,14):   0.053953   0.053953
+norm(*,15):   0.049069   0.049069
+ -------------------------------------------------
+ cuthists (1=plot for cut, 0=skip:
+cuthists( 1):  0
+cuthists( 2):  0
+cuthists( 3):  0
+cuthists( 4):  0
+cuthists( 5):  0
+cuthists( 6):  0
+cuthists( 7):  0
+cuthists( 8):  0
+cuthists( 9):  0
+cuthists(10):  0
+cuthists(11):  0
+cuthists(12):  0
+cuthists(13):  0
+cuthists(14):  0
+cuthists(15):  0
+cuthists(16):  0
+cuthists(17):  0
+cuthists(18):  0
+cuthists(19):  0
+cuthists(20):  0
+cuthists(21):  0
+cuthists(22):  0
+cuthists(23):  0
+cuthists(24):  0
+cuthists(25):  0
+cuthists(26):  0
+cuthists(27):  0
+cuthists(28):  0
+cuthists(29):  1
+ -------------------------------------------------
+ Histogram naming tags:
+filetag( 0): cohjpsi-mumu_data   
+filetag( 1): cohjpsi-mumu_ccdis  
+filetag( 2): cohjpsi-mumu_ncdis  
+filetag( 3): cohjpsi-mumu_jpsi   
+filetag( 4): cohjpsi-mumu_obg    
+filetag( 5): cohjpsi-mumu_cohpip 
+filetag( 6): cohjpsi-mumu_cohrhop
+filetag( 7): cohjpsi-mumu_anumucc
+filetag( 8): cohjpsi-mumu_qe     
+filetag( 9): cohjpsi-mumu_cohpi0 
+filetag(10): cohjpsi-mumu_nuecc  
+filetag(11): cohjpsi-mumu_anuecc 
+filetag(12): cohjpsi-mumu_anumunc
+filetag(13): cohjpsi-mumu_cohrho0
+filetag(14): cohjpsi-mumu_res    
+filetag(15): cohjpsi-mumu_cohphi0
+ -------------------------------------------------
+ END OF SETTINGS

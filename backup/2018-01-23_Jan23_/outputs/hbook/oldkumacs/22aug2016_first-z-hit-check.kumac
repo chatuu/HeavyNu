@@ -1,0 +1,22 @@
+hi/file 1 cohjpsi-mumu_data.h
+
+* This .kumac plots the difference between the first z-hits for
+* the two tracks, for the DC and the Coil.
+
+* DC:
+exec ps open plot_first-z-hit-diff_dc
+exec getid 1 27 1 0 2 1 45 
+hid=[@]
+hi/pl [hid](-75.0:75.0)
+exec ps close
+
+* Coil:
+exec ps open plot_first-z-hit-diff_coil
+exec getid 1 27 1 2 2 1 45
+hid=[@]
+hi/pl [hid](-75.0:75.0)
+exec ps close
+
+
+
+close 1

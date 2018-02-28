@@ -1,0 +1,503 @@
+macro plot cc ii ee dd nn bb vv key='yeskey' 
+
+* This macro plots Data Vs. MC  
+
+* cc = event classification
+* ii = cut number
+* ee = Extra cut
+* dd = Detector section
+* nn = Ncand type
+* bb = Bin Variation
+* vv = Variable Number
+
+* "norm" is either "mass" or "zeta", and gives the normalization files to use
+
+* key gives the legend/statistics box options:
+*  yeskey --> Shows legend in upper right
+*   right --> Same as "yeskey"
+*    left --> Shows legend in upper left
+*    zone --> Upper right for zone 1 2 (two vertical plots)
+*   zonel --> Upper left for zone 1 2 (two vertical plots)
+*   nokey --> Snows nothing
+*    stat --> Shows the stat box in the top right 
+
+
+
+*=============================*
+* Key type setup:
+if [key] .eq. 'nokey' then
+op nstat
+elseif [key] .eq. 'stat' then
+op stat
+set stat 1111111
+else
+op nstat
+endif
+*=============================*
+
+** Format Settings:
+*Size 18 24
+*Option NBOX
+set gfon -40 
+set gsiz 0.5 
+set asiz 0.36
+set vsiz 0.36
+set cfon -60
+set vfon -70
+set lfon -60
+*set yhti 1.0
+set xmgr 1.5
+set xmgl 2.5
+set xlab 1.6
+set tfon -20
+set tsiz 0.4
+set ksize .18
+
+
+
+**********************************************************************
+**********************************************************************
+* Read normalizations from file:
+
+* Create the normlist vectors:
+vec/create normscoh(8)
+vec/create normscc(8)
+vec/create normsjpsi(8)
+
+* READ  Norms:
+vector/read normscoh normlist_cohpip.txt
+vector/read normscc normlist_ccdis.txt
+vector/read normsjpsi normlist_jpsi.txt
+
+* Put into variables:
+  if [cc] .eq. 1 then
+    if [nn] .eq. 2 then
+       idx=1
+    elseif [nn] .eq. 3 then
+       idx=2
+    elseif [nn] .eq. 4 then
+       idx=3
+    elseif [nn] .eq. 5 then
+       idx=4
+    endif
+  elseif [cc] .eq. 3 then
+    if [nn] .eq. 2 then
+       idx=5
+    elseif [nn] .eq. 3 then
+       idx=6
+    elseif [nn] .eq. 4 then
+       idx=7
+    elseif [nn] .eq. 5 then
+       idx=8
+    endif
+  else 
+   idx=1
+  endif
+CohNorm=normscoh([idx])
+CCnorm=normscc([idx])
+JpsiNorm=normsjpsi([idx])
+
+* delete vectors
+/vec/del normscoh
+/vec/del normscc
+/vec/del normsjpsi
+**********************************************************************
+**********************************************************************
+
+
+
+
+
+*0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+*0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+*0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+** USER INPUT:
+
+
+** Histogram ID number to be read from each file:
+exec getid [cc] [ii] [ee] [dd] [nn] [bb] [vv]
+histid=[@]
+if [histid] .eq. 0 then
+ message Histogram ID subroutine reports no ID!
+ message Skipping plotting
+else
+
+
+** Set temporary histogram starting number:
+**  (fewer than 20 histograms will be made,
+**   starting with this number)
+startnum=200
+
+** Set number of MC components (data is 0)
+nmc=15
+
+** Set input histogram filenames:
+hfile(0) =cohjpsi-mumu_data.h
+hfile(1) =cohjpsi-mumu_ccdis.h
+hfile(2) =cohjpsi-mumu_ncdis.h
+hfile(3) =cohjpsi-mumu_obg.h
+hfile(4) =cohjpsi-mumu_cohphi0.h
+hfile(5) =cohjpsi-mumu_cohpi0.h
+hfile(6) =cohjpsi-mumu_cohrho0.h
+hfile(7) =cohjpsi-mumu_anumunc.h
+hfile(8) =cohjpsi-mumu_cohpip.h
+hfile(9) =cohjpsi-mumu_cohrhop.h
+hfile(10)=cohjpsi-mumu_anumucc.h
+hfile(11)=cohjpsi-mumu_qe.h
+hfile(12)=cohjpsi-mumu_nuecc.h
+hfile(13)=cohjpsi-mumu_anuecc.h
+hfile(14)=cohjpsi-mumu_res.h
+hfile(15)=cohjpsi-mumu_jpsi.h
+
+** Set temporary id numbers:
+ do ii=0,[nmc]
+   tmpid([ii])=[startnum]+[ii]
+ enddo
+data    =[tmpid(0)]
+ccdis   =[tmpid(1)]
+ncdis   =[tmpid(2)]
+obg     =[tmpid(3)]
+cohphi0 =[tmpid(4)]
+cohpi0  =[tmpid(5)]
+cohrho0 =[tmpid(6)]
+anumunc =[tmpid(7)]
+cohpip  =[tmpid(8)]
+cohrhop =[tmpid(9)]
+anumucc =[tmpid(10)]
+qe      =[tmpid(11)]
+nuecc   =[tmpid(12)]
+anuecc  =[tmpid(13)]
+res     =[tmpid(14)]
+jpsi    =[tmpid(15)]
+
+** Set normalization indices:
+icc =1
+icpp=8
+icrp=9
+ijpsi=15
+
+*0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+*0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+*0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0o0
+
+
+********************************
+** Copy Original Hists:
+ do ii=0,[nmc]
+   hi/file 1 [hfile([ii])]
+   hi/copy [histid] [tmpid([ii])]
+   close 1
+ enddo
+
+********************************
+** Normalize desired components:
+exec hnorm [tmpid([icc])]  [CCnorm]
+exec hnorm [tmpid([icpp])] [CohNorm]
+exec hnorm [tmpid([icrp])] [CohNorm]
+exec hnorm [tmpid([ijpsi])] [JpsiNorm]
+
+********************************
+** Set temporary iDs for summed components:
+dis    = [startnum]+[nmc]+1
+coh    = [startnum]+[nmc]+2
+other  = [startnum]+[nmc]+3
+bkg    = [startnum]+[nmc]+4
+mc     = [startnum]+[nmc]+5
+
+********************************
+** Add components:
+
+* Add DIS:
+hi/op/add [ncdis] [ccdis] [dis]
+hi/op/add [anumucc] [dis] [dis]
+
+* Add Coherent:
+hi/op/add [cohrhop] [cohpip] [coh]
+
+* Add small components:
+hi/op/add [qe]       [anumunc]  [other]
+hi/op/add [res]      [other]    [other]
+hi/op/add [nuecc]    [other]    [other]
+hi/op/add [anuecc]   [other]    [other]
+hi/op/add [obg]      [other]    [other]
+hi/op/add [cohphi0]  [other]    [other]
+hi/op/add [cohrho0]  [other]    [other]
+hi/op/add [cohpi0]   [other]    [other]
+
+* Background:
+hi/op/add [other]    [dis]   [bkg]
+hi/op/add [coh]      [bkg]   [bkg]
+
+* Add signal to MC:
+hi/op/add [jpsi]  [bkg] [mc]
+
+
+********************************
+** Get the number of bins in the plot: 
+ bins = $HINFO([mc],'XBINS')
+ bins2 = $HINFO([data],'XBINS')
+ if [bins] .ne. [bins2] then
+  /kuip/message ...
+  /kuip/message Number of bins in Data and MC histograms different!
+  /kuip/message Killing macro
+  /kuip/message ... 
+  exit
+ endif
+
+
+
+*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+** Get max (value+err) for MC
+** Outputs of this section:
+**        [Maxyvalue] --> Maximum bin (value+err)
+**        [maxid] --> ID of plot with maximum bin (value+err)
+ * Loop over MC and Data
+ do ii=1,2
+     * 1 = MC
+     * 2 = Data
+
+ *---------
+ * Set histID:
+ if [ii] .eq. 1 then
+  tempid=[mc]
+ else
+  tempid=[data]
+ endif
+
+ * Make vectors and fill them with histogram
+ * contents and errors:
+ vec/create tmpplot([bins]) R
+ vec/create tmperr([bins]) R
+ hist/get_vec/cont [tempid] tmpplot
+ hist/get_vec/err [tempid] tmperr
+
+ * Find the maximum (value+eror):
+ topsum=0.0
+ do jj=1,[bins]
+  tmpsum=tmpplot([jj])+tmperr([jj])
+  if [tmpsum] .gt. [topsum] then
+   topsum=[tmpsum]
+  endif
+ enddo
+
+ * Set total max height:
+ if [ii] .eq. 1 then
+    mcheight=[topsum]
+ else
+    dataheight=[topsum]
+ endif
+ * Delete temporary vectors:
+ vec/del tmpplot
+ vec/del tmperr
+ * Loop over mc/data
+ enddo
+
+*------------------------
+maxid=0
+if [mcheight] .gt. [dataheight] then
+ maxid=[mc]
+ Maxyvalue=[mcheight]
+else
+ maxid=[data]
+ Maxyvalue=[dataheight]
+endif
+
+*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+set hwid 4
+set mtyp 20
+*----------------------------
+if [maxid] .eq. [data] then
+
+set pmci 1
+set hcol 1
+hi/pl [data] 
+
+
+*----------------------------
+elseif [maxid] .eq. [mc] then
+
+set pmci 1
+set hcol 1
+hi/pl [mc] hist
+
+
+set pmci 1
+set hcol 1
+hi/pl [data] s 
+
+else
+ /kuip/message 'maxid not set'
+ /kuip/message [maxid]
+ /kuip/message [data]
+ /kuip/message [mc]
+endif
+*----------------------------
+
+
+set hcol 0
+set hwid 6
+hi/pl [bkg] s,hist
+set hwid 1
+
+hi/op/add [jpsi] [bkg] [bkg]
+
+* Add CohJpsi
+set hcol 4
+set htyp 444
+set hwid 4
+set lwid 4
+hi/pl [bkg] U,hist  
+set lwid 1
+set htyp 0
+set hcol 1
+set hwid 1
+
+set hcol 2
+set dmod 2
+set hwid 5
+hi/pl [coh] s,hist
+set hcol 1
+set dmod 1
+set hwid 1
+
+set dmod 2
+set hcol 6
+set hwid 6
+hi/pl [dis] s,hist
+set hwid 1
+set dmod 1
+set hcol 1
+
+set dmod 1
+set hcol 3
+set hwid 6
+hi/pl [other] s,hist
+set hwid 1
+set dmod 1
+set hcol 1
+
+set hwid 1
+
+
+
+
+*-----------------------------------------------
+ * Make Key:
+if ([key].ne.'nokey' .and. [key].ne.'stat' ) then
+     !==============
+     tmpplot=[maxid]
+     !==============
+  *?????????????????????????????
+  *  Find maximum/minimum X 
+  *  values in plot (bin range)
+  minXvalue=$HINFO([tmpplot],'XMIN')
+  maxXvalue=$HINFO([tmpplot],'XMAX')
+  * Width of entire plot:
+  plotXwidth = [maxXvalue]-[minXvalue]
+  *?????????????????????????????
+
+      **********************************************
+      **********************************************
+      *** Number of items:
+
+       nItems = 5
+
+      *** Width of box (in rato of full plot width):
+      *** (increase this factor for a wider box)
+
+       bWidth = 0.22 *[plotXwidth]
+
+      **********************************************
+      **********************************************
+ *** Draw enclosing box:
+  boxmaxY = 1.1*([maxYvalue])
+  if [key].eq.'zone' .or. [key].eq.'zonel' then
+   boxminY = [boxmaxY] - 2*[boxmaxY]*[nItems]*(0.037-0.00085*[nItems])
+  else
+   boxminY = [boxmaxY] - [boxmaxY]*[nItems]*(0.037-0.00085*[nItems])
+  endif
+  if [key].eq.'yeskey' .or. [key].eq.'right' .or. [key].eq.'zone' then
+   boxmaxX = [maxXvalue] - 0.02*[plotXwidth]
+   boxminX = [boxmaxX] - [bWidth]
+  elseif [key].eq.'left' .or. [key].eq.'zonel' then
+   boxminX = [minXvalue] + 0.02*[plotXwidth]
+   boxmaxX = [boxminX] + [bwidth]
+  endif
+  set pmci 1
+  set plci 1
+  set ltyp 1
+  set lwid 4
+*  dbox [boxminX] [boxmaxX] [boxminY] [boxmaxY]
+
+
+  Xpos=[boxminX] + 0.4*[bWidth]
+
+  * Set the step value
+  if [key].eq.'zone' .or. [key].eq.'zonel' then
+   sstep=2*0.025
+  else
+   sstep=0.025
+  endif
+
+  *--------------------------------
+  * Now print the labels:
+
+
+set txci 4
+set faci 4
+set lwid 4
+  Ypos = [boxmaxY]*0.975 - [boxmaxY]*[sstep]*0
+key [Xpos] [Ypos] 444 'CohJpsi' 1.0 H
+
+set plci 2
+set txci 2
+set lwid 5
+  Ypos = [boxmaxY]*0.975 - [boxmaxY]*[sstep]*1
+key [Xpos] [Ypos] 2 'Coherent' 1.0 L
+
+set plci 6
+set txci 6
+set lwid 6
+  Ypos = [boxmaxY]*0.975 - [boxmaxY]*[sstep]*2
+key [Xpos] [Ypos] 2 'DIS' 1.0 L
+
+set plci 3
+set txci 3
+set lwid 6
+  Ypos = [boxmaxY]*0.975 - [boxmaxY]*[sstep]*3
+key [Xpos] [Ypos] 1 'Other' 1.0 L
+
+set plci 1
+set txci 1
+set lwid 4
+  Ypos = [boxmaxY]*0.975 - [boxmaxY]*[sstep]*4
+key [Xpos] [Ypos] 1 'BkgMC' 1.0 L
+
+set plci 1
+set txci 1
+set hcol 1
+set lwid 1
+
+
+hi/del *
+
+endif
+*-----------------------------------------------
+
+
+
+
+
+
+atitle '' 'Number of Events' u
+
+hi/del *
+
+* histid error if-statement:
+endif
+
+

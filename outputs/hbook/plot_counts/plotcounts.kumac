@@ -1,0 +1,141 @@
+** This .kumac file simply reads some plots from the histograms
+** and outputs the number of events in each to file.  The order
+** of the histogram listing matches the alphabetical order in
+** linux for easy comparison with cut tables using the "more" command.
+
+** Set the cut number:
+cnum=29
+
+** Set number of components 
+nmc=16
+
+
+hfile(1) =../cohjpsi-mumu_anuecc.h
+hfile(2) =../cohjpsi-mumu_anumucc.h
+hfile(3) =../cohjpsi-mumu_anumunc.h
+hfile(4) =../cohjpsi-mumu_ccdis.h
+hfile(5) =../cohjpsi-mumu_cohphi0.h
+hfile(6) =../cohjpsi-mumu_cohpi0.h
+hfile(7) =../cohjpsi-mumu_cohpip.h
+hfile(8) =../cohjpsi-mumu_cohrho0.h
+hfile(9) =../cohjpsi-mumu_cohrhop.h
+hfile(10)=../cohjpsi-mumu_data.h
+hfile(11)=../cohjpsi-mumu_jpsi.h
+hfile(12)=../cohjpsi-mumu_ncdis.h
+hfile(13)=../cohjpsi-mumu_nuecc.h
+hfile(14)=../cohjpsi-mumu_obg.h
+hfile(15)=../cohjpsi-mumu_qe.h
+hfile(16)=../cohjpsi-mumu_res.h
+
+**************************************************
+* Tags for extra cuts:
+tagext(1)=_allev
+tagext(2)=_mblnd
+tagext(3)=_msign
+tagext(4)=_mnorm
+
+* Tags for event topology:
+tagevt(0)=numucc
+tagevt(1)=osdimu
+tagevt(2)=lsdimu
+tagevt(3)=osmu+x
+
+* Tags for detector section:
+tagdet(0)=drft
+tagdet(1)=othr
+tagdet(2)=coil
+tagdet(3)=upst
+
+* Tags for ncand:
+tagncnd(2)=ncnd2
+tagncnd(3)=ncnd3
+tagncnd(4)=ncnd4
+tagncnd(5)=ncnd5
+**************************************************
+
+* Vector containing the number of events in the plot:
+vec/create counts([nmc]) R
+
+* Temporary plot ID number:
+tmpid=77
+
+* Open all histogram files:
+do ii=1,[nmc]
+ fnum=[ii]+20
+ hi/file [fnum] [hfile([ii])]
+enddo
+
+** Loop over event toplogy types
+**  0 = CCnumu
+**  1 = OS Dimu
+**  2 = LS Dimu
+**  3 = OS Mu-X
+do typ=0,3
+
+** Loop over detector sections:
+**  0 = DC
+**  1 = Other
+**  2 = Coil
+**  3 = Upstream
+do det=0,3
+
+** Loop over ncand values:
+**  2 --> ncand=2
+**  3 --> ncand=3
+**  4 --> ncand=4
+**  5 --> ncand={3,4}
+do ncnd=2,5
+
+** Loop over extra cut types:
+**  1 = All events
+**  2 = Mass Blind
+**  3 = Mass Signal
+**  4 = Mass norm
+do ext=1,4
+
+
+  ** Histogram ID number to be read from each file:
+  exec getid [typ] [cnum] [ext] [det] [ncnd] 1 1
+  histid=[@]
+  if [histid] .ne. 0 then
+
+
+    do ii=1,[nmc]
+     fnum=[ii]+20
+
+     * Must copy the plots before PAW knows they are there
+     hi/copy //lun[fnum]/[histid] [tmpid]
+
+     * Get the value in the histogram:
+     sum=$HINFO([tmpid],'SUM')+$HINFO([tmpid],'OVERFLOW')+$HINFO([tmpid],'UNDERFLOW')
+     vec/input counts([ii]) [sum]
+     if [ii].ne.1 then
+       tmp=[ii]-1
+      endif
+
+     * Delete temporary copy:
+     hi/del [tmpid]
+    enddo
+
+
+    * Write the vector to file:
+    filename=output/[tagevt([typ])]_[tagdet([det])]_[tagncnd([ncnd])][tagext([ext])].txt
+    vec/write counts [filename] F10.1
+
+
+  endif
+
+
+enddo
+enddo
+enddo
+enddo
+
+
+* Close all histogram files:
+do ii=1,[nmc]
+ fnum=[ii]+20
+ close [fnum] 
+enddo
+
+vec/delete counts

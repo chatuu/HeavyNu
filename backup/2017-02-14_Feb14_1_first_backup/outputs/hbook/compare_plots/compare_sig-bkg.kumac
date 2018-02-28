@@ -1,0 +1,73 @@
+** Loop over detector sections (only coil and DC)
+do idetector=1,2
+if [idetector] .eq. 1 then
+ idet=0
+elseif [idetector] .eq. 2 then
+ idet=2
+endif
+** [idet]
+
+** Loop over event types (osdimu and osmux only)
+do ieventtype=1,2
+if [ieventtype] .eq. 1 then
+ ievt=1
+elseif [ieventtype] .eq. 2 then
+ ievt=3
+endif
+** [ievt]
+
+dettag(1)=dc
+dettag(2)=coil
+
+evttag(1)=osdimu
+evttag(2)=osmux
+
+
+filename=compare_sig-bkg_//[dettag([idetector])]//_//[evttag([ieventtype])]
+exec ps open [filename]
+
+*===================================================
+* Make plots:
+
+* Mass:
+exec plotset [ievt] [idet] 02 30 Mass
+* ThetaMuMu:
+exec plotset [ievt] [idet] 01 27 ThetaMuMu
+* Theta12:
+exec plotset [ievt] [idet] 01 32 Theta12
+* Phi12:
+exec plotset [ievt] [idet] 01 33 Phi12
+* PmuNeg
+exec plotset [ievt] [idet] 01 04 Pmu-
+* PmuPos
+exec plotset [ievt] [idet] 01 14 Pmu+
+* Pmumu
+exec plotset [ievt] [idet] 01 24 Pmumu
+* PtMuNeg
+exec plotset [ievt] [idet] 01 06 PtMu-
+* PtMuPos
+exec plotset [ievt] [idet] 01 16 PtMu+
+* PtMuMu
+exec plotset [ievt] [idet] 01 26 PtMuMu
+* Pasym
+exec plotset [ievt] [idet] 01 34 PmuAsym
+* Eclust
+exec plotset [ievt] [idet] 01 31 Eecal
+* Ehcal
+exec plotset [ievt] [idet] 01 42 Ehcal
+* PtNeutHad
+exec plotset [ievt] [idet] 01 43 PtNeut-Hadron
+* PneutHad
+exec plotset [ievt] [idet] 01 44 Pneut-Hadron
+
+
+
+*===================================================
+
+
+exec ps close
+
+
+
+enddo
+enddo

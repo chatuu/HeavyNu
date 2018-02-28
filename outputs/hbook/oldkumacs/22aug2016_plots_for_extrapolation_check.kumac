@@ -1,0 +1,26 @@
+hi/file 1 cohjpsi-mumu_data.h
+
+* This .kumac plots interesting variables for comparison of my
+* hand-extrapolation with the original ntuple variables.
+* All plots are for the coil
+
+* Plot my calculated vertex Z-position minus that of the ntuple:
+exec ps open plot_posz-zvr
+exec getid 1 27 1 2 2 1 46
+hid=[@]
+hi/pl [hid]
+exec ps close
+
+* Plot ntuple vertex vs my calculate vertex z-position:
+exec ps open plot_zvr-vs-posz
+exec getid 1 27 1 2 2 3 47
+hid=[@]
+hi/pl [hid]
+exec getid 1 27 1 2 2 3 37
+hid=[@]
+hi/pl [hid] histos
+exec ps close
+
+
+
+close 1

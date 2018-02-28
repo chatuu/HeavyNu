@@ -1,0 +1,35 @@
+hi/file 1 cohjpsi-mumu_data.h
+
+* Loop over detector sections:
+do idet=1,2
+ * dd=0 for DC, dd=2 for Coil
+ if [idet] .eq. 1 then
+   dd=0
+ else
+   dd=2
+ endif
+
+* Loop over mass cut
+do ee=0,1
+
+* Loop over binning
+do bb=1,4
+
+outid= [idet]*100 + [ee]*10  + [bb]
+
+ exec copyplot 1 27 [ee] [dd] 2 [bb] 30 [outid]
+
+enddo
+enddo
+enddo
+
+close 1
+
+
+
+hi/file 2 Jpsi_Mmm.h 1024 N
+
+hrout 0
+
+close 2
+

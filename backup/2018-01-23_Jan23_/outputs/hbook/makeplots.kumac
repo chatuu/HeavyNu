@@ -1,0 +1,326 @@
+
+* Name of the plotting macro to use
+macroname=plot
+
+
+***************************************
+***************************************
+* Set directory names:
+
+* Topologies:
+typedir(0)=plots/numucc/
+typedir(1)=plots/osdimu/
+typedir(2)=plots/lsdimu/
+typedir(3)=plots/osmux/
+typemin=0
+typemax=3
+
+* Detector sections:
+detsec(0)='dc/'
+detsec(1)='other/'
+detsec(2)='coil/'
+detsec(3)='upstr/'
+detmin=0
+detmax=3
+
+* Track multiplicity:
+ncand(2)='ncand2/'
+ncand(3)='ncand3/'
+ncand(4)='ncand4/'
+ncand(5)='ncand34/'
+ncandmin=2
+ncandmax=5
+
+***************************************
+
+* Extra cut type tags:
+extcut(1)=''
+extcut(2)='-mb'
+extcut(3)='-msig'
+extcut(4)='-mnorm'
+extmin=1
+extmax=4
+
+***************************************
+* Cut number to use:
+ii=29
+
+***************************************
+***************************************
+
+
+* Loop over topolgies:
+do ityp=[typemin],[typemax]
+* Loop over detector sections:
+do idet=[detmin],[detmax]
+* Loop over track multiplicities:
+do itrk=[ncandmin],[ncandmax]
+
+ * Get an ID for a single plot (that should exist) to
+ * check that the topology, detector section, multiplicity
+ * and cut number are available.
+ exec getid [ityp] [ii] 1 [idet] [itrk] 01 01 
+ checkid=[@]
+ if [checkid] .ne. 0 then
+
+
+
+
+!=============================================
+* Make thetax and thetay with grid and stats:
+* Loop over cut tag types:
+
+op grid
+op stat
+set stat 1111111
+
+op utit
+
+ext=1
+
+*ThetaX and ThetaY
+zone 2 2
+filename=[typedir([ityp])]//[detsec([idet])]//[ncand([itrk])]//'thetaxy'//[extcut([ext])]
+exec eps open [filename]
+title '[Q]?x!1' u
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 38 stat 
+atitle '' 'Number of Events' u
+title '[Q]?x!2' u
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 39 stat
+atitle '' 'Number of Events' u
+title '[Q]?y!1' u
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 40 stat
+atitle '' 'Number of Events' u
+title '[Q]?y!2' u
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 41 stat
+atitle '' 'Number of Events' u
+exec eps close
+zone 1 1
+
+op htit
+
+op ngrid
+op nstat
+!=============================================
+
+
+
+
+* Loop over cut tag types:
+do ext=[extmin],[extmax]
+
+
+* Vertex Position
+ * Choose zvr binning:
+ if [idet] .eq. 0 then
+  zvrbin=1
+ else
+  zvrbin=3
+ endif
+zone 2 2
+filename=[typedir([ityp])]//[detsec([idet])]//[ncand([itrk])]//'vertex'//[extcut([ext])]
+exec eps open [filename]
+opt utit
+title 'XVR' u
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 35 nokey 
+atitle '' 'Number of Events' u
+title 'YVR' u
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 36 nokey
+op htit
+zone 1 2 2 s
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] [zvrbin] 37 zone 
+atitle '' 'Number of Events' u
+exec eps close
+
+
+* Theta1 and Theta2:
+zone 1 2
+filename=[typedir([ityp])]//[detsec([idet])]//[ncand([itrk])]//'theta1+2'//[extcut([ext])]
+exec eps open [filename]
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 07 zone
+atitle '' 'Number of Events' u
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 17 zone 
+atitle '' 'Number of Events' u
+exec eps close
+zone 1 1
+
+
+* Thetamumu and Theta12:
+filename=[typedir([ityp])]//[detsec([idet])]//[ncand([itrk])]//'thetamumu-theta12'//[extcut([ext])]
+exec eps open [filename]
+zone 1 2
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 27 zone
+atitle '' 'Number of Events' u
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 32 zone 
+atitle '' 'Number of Events' u
+zone 1 1
+exec eps close
+
+
+* Phi12:
+filename=[typedir([ityp])]//[detsec([idet])]//[ncand([itrk])]//'phi12'//[extcut([ext])]
+exec eps open [filename]
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 33 
+atitle '' 'Number of Events' u
+exec eps close
+
+
+* PmuAsym:
+filename=[typedir([ityp])]//[detsec([idet])]//[ncand([itrk])]//'pasym'//[extcut([ext])]
+exec eps open [filename]
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 34 
+atitle '' 'Number of Events' u
+exec eps close
+
+
+* Zeta1 and Zeta2:
+filename=[typedir([ityp])]//[detsec([idet])]//[ncand([itrk])]//'zeta1+2'//[extcut([ext])]
+exec eps open [filename]
+zone 1 2
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 02 08 zone 
+atitle '' 'Number of Events' u
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 02 18 zone
+atitle '' 'Number of Events' u
+exec eps close
+zone 1 1
+
+
+* Zetamumu:
+filename=[typedir([ityp])]//[detsec([idet])]//[ncand([itrk])]//'zetamumu'//[extcut([ext])]
+exec eps open [filename]
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 28 
+atitle '' 'Number of Events' u
+exec eps close
+
+
+* Pmu+ & PtMuPos:
+zone 1 2
+filename=[typedir([ityp])]//[detsec([idet])]//[ncand([itrk])]//'p-pt-mupos'//[extcut([ext])]
+exec eps open [filename]
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 14 zone
+atitle '' 'Number of Events' u
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 16 zone
+atitle '' 'Number of Events' u
+exec eps close
+zone 1 1
+
+
+* Pmu- & PtMuNeg:
+zone 1 2
+filename=[typedir([ityp])]//[detsec([idet])]//[ncand([itrk])]//'p-pt-muneg'//[extcut([ext])]
+exec eps open [filename]
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 04 zone
+atitle '' 'Number of Events' u
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 06 zone
+atitle '' 'Number of Events' u
+exec eps close
+zone 1 1
+
+
+* Pmumu & Ptmumu:
+zone 1 2
+filename=[typedir([ityp])]//[detsec([idet])]//[ncand([itrk])]//'p-pt-mumu'//[extcut([ext])]
+exec eps open [filename]
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 24 zone 
+atitle '' 'Number of Events' u
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 26 zone
+atitle '' 'Number of Events' u
+exec eps close
+zone 1 1
+
+
+* Eneut:
+filename=[typedir([ityp])]//[detsec([idet])]//[ncand([itrk])]//'eneut'//[extcut([ext])]
+exec eps open [filename]
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 31 
+atitle '' 'Number of Events' u
+exec eps close
+
+* Ehcal:
+filename=[typedir([ityp])]//[detsec([idet])]//[ncand([itrk])]//'ehcal'//[extcut([ext])]
+exec eps open [filename]
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 42
+atitle '' 'Number of Events' u
+exec eps close
+
+* PneutH:
+filename=[typedir([ityp])]//[detsec([idet])]//[ncand([itrk])]//'pneuth'//[extcut([ext])]
+exec eps open [filename]
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 44
+atitle '' 'Number of Events' u
+exec eps close
+
+* PtneutH:
+filename=[typedir([ityp])]//[detsec([idet])]//[ncand([itrk])]//'ptneuth'//[extcut([ext])]
+exec eps open [filename]
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] 01 43
+atitle '' 'Number of Events' u
+exec eps close
+
+
+
+*****************************************************************************
+* mass:
+
+* Don't need to plot with extra mass cuts:
+if [ext] .le. 1 then
+
+binname(1)=0to7-150mev
+binname(2)=0to7-100mev
+binname(3)=0to7-75mev
+binname(4)=0to7-50mev
+***
+binname(5)=0to5-300mev
+binname(6)=0to5-150mev
+binname(7)=0to5-100mev
+binname(8)=0to5-75mev
+binname(9)=0to5-50mev
+binname(10)=0to5-25mev
+***
+binname(11)=0.9to5-300mev
+binname(12)=0.9to5-150mev
+binname(13)=0.9to5-100mev
+binname(14)=0.9to5-75mev
+binname(15)=0.9to5-50mev
+binname(16)=0.9to5-25mev
+***
+binname(17)=2to4-25mev
+binname(18)=2to4-50mev
+binname(19)=2to4-75mev
+binname(20)=2to4-100mev
+
+do ibin=1,20
+
+* Skip some binnings:
+if [ibin] .ne. 4 .and. [ibin] .ne. 8 .and. [ibin] .ne. 9 .and. [ibin] .ne. 10 .and. [ibin] .ne. 16 .and. [ibin] .ne. 17 .and. [ibin] .ne. 18 then 
+
+
+filename=[typedir([ityp])]//[detsec([idet])]//[ncand([itrk])]//'mass-'//[binname([ibin])]//[extcut([ext])]
+exec eps open [filename]
+exec [macroname] [ityp] [ii] [ext] [idet] [itrk] [ibin] 30 
+atitle '' 'Number of Events' u
+exec eps close
+
+endif
+
+enddo
+
+endif
+*****************************************************************************
+
+* Loop over extra cuts:
+enddo
+
+  * Check that histogram values are available:
+  endif
+
+* Loop over track multiplicities:
+enddo
+* Loop over detector sections:
+message Done with section: [detsec([idet])] 
+enddo
+* Loop over topolgies:
+message Done with topology: [typedir([ityp])]
+message ------------------------
+enddo
+

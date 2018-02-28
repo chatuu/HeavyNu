@@ -1,0 +1,28 @@
+
+op nstat
+op ngrid
+
+
+
+hi/file 1 ppm0.0/chisq_cc.h
+exec eps open ppm0.0/chisq_cc
+hi/pl 101
+exec eps close
+close 1
+
+hi/file 1 ppm0.5/chisq_cc.h
+exec eps open ppm0.5/chisq_cc
+hi/pl 101
+exec eps close
+close 1
+
+hi/file 1 ppm1.0/chisq_cc.h
+exec eps open ppm1.0/chisq_cc
+hi/pl 101
+exec eps close
+close 1
+
+
+
+
+

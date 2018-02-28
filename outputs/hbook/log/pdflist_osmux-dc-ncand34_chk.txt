@@ -1,0 +1,13 @@
+-rw-r--r-- 1 chatuu users 24981 Mar 23 23:00 ./plots/osmux/dc/ncand34/data-fit-100mev.pdf
+-rw-r--r-- 1 chatuu users 21828 Mar 23 23:00 ./plots/osmux/dc/ncand34/data-fit-150mev.pdf
+-rw-r--r-- 1 chatuu users 12505 Mar 23 23:00 ./plots/osmux/dc/ncand34/ehcal-mb.pdf
+-rw-r--r-- 1 chatuu users 12971 Mar 23 23:00 ./plots/osmux/dc/ncand34/ehcal-mnorm.pdf
+-rw-r--r-- 1 chatuu users 12356 Mar 23 23:00 ./plots/osmux/dc/ncand34/ehcal-msig.pdf
+-rw-r--r-- 1 chatuu users 11702 Mar 23 23:00 ./plots/osmux/dc/ncand34/ehcal.pdf
+-rw-r--r-- 1 chatuu users 12245 Mar 23 23:00 ./plots/osmux/dc/ncand34/eneut-mb.pdf
+-rw-r--r-- 1 chatuu users 12674 Mar 23 23:00 ./plots/osmux/dc/ncand34/eneut-mnorm.pdf
+-rw-r--r-- 1 chatuu users 12010 Mar 23 23:00 ./plots/osmux/dc/ncand34/eneut-msig.pdf
+-rw-r--r-- 1 chatuu users 11670 Mar 23 23:00 ./plots/osmux/dc/ncand34/eneut.pdf
+-rw-r--r-- 1 chatuu users 13456 Mar 23 23:00 ./plots/osmux/dc/ncand34/mass-0.9to5-100mev.pdf
+-rw-r--r-- 1 chatuu users 13372 Mar 23 23:00 ./plots/osmux/dc/ncand34/mass-0.9to5-150mev.pdf
+-rw-r--r-- 1 chatuu users     0 Mar 23 23:00 ./plots/osmux/dc/ncand34/mass-0.9to5-300mev.pdf

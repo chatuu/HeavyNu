@@ -1,0 +1,65 @@
+* This .kumac file fits the background mass plots (J/Psi mass excluded)
+* from a range of about 1 to 7GeV/c^2 using a 4th degree polynomial. 
+* It then outputs the fit parameters to text file.
+
+**************************
+* Cut number to use:
+cnum = 29
+
+**************************
+
+bintag(1)=150mev
+bintag(2)=100mev
+
+typtag(0)=numucc
+typtag(1)=osdimu
+typtag(2)=lsdimu
+typtag(3)=osmupl
+
+dettag(0)=drft
+dettag(1)=othr
+dettag(2)=coil
+dettag(3)=upst
+
+ncndtag(2)=ncand2
+ncndtag(3)=ncand3
+ncndtag(4)=ncand4
+ncndtag(5)=ncnd34
+
+
+hi/file 1 ../cohjpsi-mumu_data.h
+
+* Loop over bin types (100 and 150MeV):
+do ibin=1,2
+
+* Loop over event types:
+do ityp=0,3
+* Loop over detector sections:
+do idet=0,3
+* Loop over ncand types:
+do incand=2,5
+
+exec getid [ityp] [cnum] 2 [idet] [incand] [ibin] 30 
+hid=[@]
+
+if [hid] .ne. 0 then
+
+ vec/create par(5) r
+ * Fit without plotting or printing parameter output (NQ):
+ hi/fit [hid](1.0:7.0) p4 'NQ' 5 par
+ outfile=par/par_[typtag([ityp])]_[dettag([idet])]_[ncndtag([incand])]_[bintag([ibin])].txt
+ vec/write par [outfile] F15.7
+ vec/del par
+
+else
+*message Skipping fit for:  ityp [ityp] , idet [idet] , incand [incand]
+endif
+
+enddo
+enddo
+enddo
+
+enddo
+
+close 1
+

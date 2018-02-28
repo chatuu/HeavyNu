@@ -1,0 +1,26 @@
+hi/file 1 ../cohjpsi-mumu_jpsi.h
+
+ityp=1
+icut=29
+iext=1
+idet=0
+incand=2
+ibin=17
+ivar=30
+
+set mtyp 21
+
+
+exec getid [ityp] [icut] [iext] [idet] [incand] [ibin] [ivar]
+hid=[@]
+
+exec ps open jpsi-mc-mass
+hi/pl [hid]
+exec ps close
+
+*exec fitgauss [hid] 
+*exec fitgaussclean [hid] 
+exec fitgaussrange [hid] 2.95 3.2
+
+
+close 1

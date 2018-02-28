@@ -1,0 +1,26 @@
+*** Begin of history file: Wed Dec 20 23:32:23 2017
+hi/file 1 chisq_ccdis.h
+hi/pl 101 (0.0:3.0)
+hi/pl 101 (0.0:1.4)
+hi/pl 101 (0.0:1.4)
+hi/pl 101 (0.0:1.4)
+hi/pl 101 (0.0:4)
+hi/pl 101 (0.0:4.0)
+hi/pl 101 (0.0:2.0)
+hi/pl 101 (0.0:2.0)
+hi/pl 101 (1.0:2.0)
+hi/pl 101(1.0:2.0)
+hi/pl 101(0.0:1.4)
+hi/pl 101(0.0:4)
+hi/pl 101(0.0:4.0)
+hi/pl 101(0.0:3.5)
+hi/pl 101(0.0:2.5)
+hi/file 2 chisq_cohpip.h
+hi/plot 101(0.0:3.0)
+hi/file 3 chisq_jpsi.h
+hi/plot 101(0.0:3.0)
+hi/plot 101(0.0:4.0)
+hi/plot 101(0.0:2.0)
+.q
+q
+*** End   of history file: Thu Dec 21 00:19:42 2017

@@ -1,0 +1,14 @@
+macro printhistid cc ii ee dd nn bb vv 
+
+* This macro simply prints a histogram ID from the given parameters.
+** cc = Event topology
+** ii = Cut number
+** ee = Extra cut
+** dd = Detector section
+** nn = Ncand type
+** bb = Bin number
+** vv = Variable number
+
+exec getid [cc] [ii] [ee] [dd] [nn] [bb] [vv] 
+
+message histid: [@]

@@ -1,0 +1,54 @@
+---- Histogram filenames for each data type and number of types:
+9
+cohrho_data.h
+cohrho_ncdis.h
+cohrho_ccdis.h
+cohrho_cohrho.h
+cohrho_obg.h
+cohrho_qe.h
+cohrho_cohpip.h
+cohrho_cohpi0.h
+cohrho_cohphi.h
+
+---- Number of floated compnents: (should be 2nd, 3rd... listed histograms) 
+4
+---- Location of NCDIS histogram files:
+hists/
+---- Location of CCDIS histogram files:
+hists_ccnorm/
+---- Location of CohRho0 histogram files:
+hists/
+---- Location of OBG histogram files:
+hists/
+
+---- File tags for floated components:
+nc
+cc
+coh
+obg
+
+---- Titles for floated components:
+NCDIS
+CCDIS
+CohRho0
+OBG
+  
+---- Number of groups of plots and output directories:
+1
+ppm0.5
+  
+---- NCDIS Normalization Plot(s) and bins:
+18
+27020231 '$\phi_{12}$ (\ztrz $> 0.075$), $P_\pm \geq 0.5$'
+  
+---- CCDIS Normalization Plot(s) and bins:
+36
+27000131 '$\phi_{12}$, $P_\pm \geq 0.5$'
+  
+---- CohRho0 Normalization Plot(s) and bins:
+20
+27051520 '\ztrz (0-0.1) In $\rho$ Mass, $P_\pm \geq 0.5$'
+  
+---- OBG Normalization Plot(s) and bins:
+1
+27052017 'One bin mpipi plot for OBG'

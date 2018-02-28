@@ -1,0 +1,54 @@
+macro plotset cc dd bb vv titles
+
+* cc = event type
+* dd = detector
+* bb = binning
+* vv = variable
+
+zone 2 2
+
+op utit
+
+** Full plot:
+title [titles] u
+exec plot [cc] 27 0 [dd] 2 [bb] [vv] nokey
+
+** Cohjpsi plot:
+* Get the extra cut ID number:
+title '(CohJ/Psi)' u
+exec getcheckid 0 [dd] 2
+tt=[@]
+** Histogram ID number 
+exec gethistid [cc] 27 [tt] [bb] [vv]
+histid=[@]
+hi/file 1 cohjpsi-mumu_jpsi.h
+set hcol 4
+hi/pl [histid] hist
+set hcol 1
+close 1
+
+
+** Background plot (mass blind):
+title '(Mass Blind)' u
+exec plot [cc] 27 1 [dd] 2 [bb] [vv] nokey
+
+** Signal plot:
+title '(Jpsi Mass)' u
+exec plot [cc] 27 2 [dd] 2 [bb] [vv] nokey
+
+
+
+
+op htit
+
+
+
+
+
+
+
+
+
+
+
+zone 1 1
